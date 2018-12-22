@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+
+*.conf
+secrets.yaml
+backup
+
+google-assistant
