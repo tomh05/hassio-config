@@ -1,53 +1,8 @@
-- platform: history_stats
-  name: "Replay Hallways"
-  entity_id: light.hallways
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
-
-- platform: history_stats
-  name: "Replay Living Room"
-  entity_id: light.living_room
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
-
-- platform: history_stats
-  name: "Replay Dressing Room"
-  entity_id: light.dressing_room
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
-
-- platform: history_stats
-  name: "Replay Ensuite"
-  entity_id: light.ensuite
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
-
-- platform: history_stats
-  name: "Replay Bedroom"
-  entity_id: light.bedroom
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
-
-- platform: history_stats
-  name: "Replay Guest Ensuite"
-  entity_id: light.guest_ensuite
-  state: "on"
-  type: count
-  start: >
-    {{ as_timestamp(now()) - (7*86400) }}
-  duration: 00:00:30
+#- platform: history_stats
+#  name: "Replay Living Room"
+#  entity_id: light.living_room
+#  state: "on"
+#  type: count
+#  start: >
+#    {{ as_timestamp(now()) - (7*86400) }}
+#  duration: 00:00:30

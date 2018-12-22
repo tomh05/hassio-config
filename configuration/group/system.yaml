@@ -15,8 +15,7 @@ system_pi_stats:
 system_links:
   name: Links
   entities:
-  - weblink.sky_router
-  - weblink.bt_wifi
+  - weblink.router
   - weblink.node_red
   - weblink.pi_hole
   - weblink.travis
