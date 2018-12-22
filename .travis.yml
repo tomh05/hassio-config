@@ -8,4 +8,4 @@ script:
   - 'mv secrets.yaml.sample secrets.yaml'
   - 'touch fullchain.pem'
   - 'touch privkey.pem'
-
+  - 'hass -c . --script check_config | tee check.output'
