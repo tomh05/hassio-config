@@ -1,0 +1,15 @@
+name: Git pull
+options:
+  auto_restart: true
+  deployment_key: []
+  deployment_key_protocol: rsa
+  deployment_password: ''
+  deployment_user: ''
+  git_branch: 'master'
+  git_command: 'reset'
+  git_remote: 'origin'
+  repeat:
+    active: false
+    interval: 300
+  repository: https://github.com/tomh05/hass-config.git
+url: https://home-assistant.io/addons/git_pull/
