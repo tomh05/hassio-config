@@ -1,0 +1,22 @@
+[connection]
+id=hassos-network
+uuid=3baa519c-c5c2-406f-b809-095f9ace8897
+type=802-11-wireless
+
+[802-11-wireless]
+mode=infrastructure
+ssid=SSID_GOES_HERE
+# Uncomment below if your SSID is not broadcasted
+#hidden=true
+
+[802-11-wireless-security]
+auth-alg=open
+key-mgmt=wpa-psk
+psk=WIRELESS_PASSWORK_GOES_HERE
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+method=auto
