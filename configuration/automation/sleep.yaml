@@ -1,0 +1,16 @@
+- alias: Sleep music
+  trigger:
+    - entity_id: sensor.day_phase
+      platform: state
+      to: "night"
+  action:
+    - service: light.turn_on
+      brightness: 2
+      entity_id: light.test_light
+    - service: media_player.shuffle_set
+      shuffle: true
+      entity_id: media_player.spotify
+    - service: media_player.play_media
+      media_content_type": playlist
+      media_content_id": spotify:user:spotify:playlist:37i9dQZF1DWZd79rJ6a7lp
+      entity_id: media_player.spotify
