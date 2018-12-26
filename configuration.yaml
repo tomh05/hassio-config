@@ -28,12 +28,6 @@ sun:
 updater:
   include_used_components: true
 
-light:
-  - platform: magicbluelight
-    name: 'Living Room'
-    address: 20:16:01:01:05:a0
-    version: 10
-
 # History
 #recorder:
 #  purge_interval: 1

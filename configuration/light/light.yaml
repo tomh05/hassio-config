@@ -1,0 +1,7 @@
+light:
+  - platform: magicbluelight
+    name: 'Living Room'
+    address: 20:16:01:01:05:a0
+    version: 10
+
+
