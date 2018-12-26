@@ -35,7 +35,7 @@ build_ci:
     - platform: rest
       resource: https://api.travis-ci.com/repos/tomh05/hassio-config/builds
       headers:
-        Accept: application/vnd.travis-ci.2+json
+        Accept: application/vnd.travis-ci.2.1+json
       value_template: "{{ value_json.builds[0].state }}"
       name: "Travis Build Status"
     # - platform: travisci
