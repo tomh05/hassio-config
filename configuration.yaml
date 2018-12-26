@@ -17,7 +17,6 @@ conversation:
 discovery:
 frontend:
   javascript_version: latest
-ios:
 map:
 hue:
   bridges:
@@ -103,6 +102,12 @@ device_tracker:
 
 ifttt: 
   key: !secret ifttt_key
+
+notify:
+  - platform: html5
+    name: NOTIFIER_NAME
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
 
 # Components
 automation: !include_dir_merge_list configuration/automation
