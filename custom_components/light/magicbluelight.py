@@ -84,7 +84,7 @@ class MagicBlueLight(Light):
         """Instruct the light to turn on."""
 
 
-        if not self._light.is_connected():
+        if not self._light.test_connection():
             try:
                 self._light.connect()
             except Exception as e:
@@ -108,7 +108,7 @@ class MagicBlueLight(Light):
 
     def turn_off(self, **kwargs):
         """Instruct the light to turn off."""
-        if not self._light.is_connected():
+        if not self._light.test_connection():
             try:
                 self._light.connect()
             except Exception as e:
