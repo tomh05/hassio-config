@@ -85,15 +85,15 @@ zone:
     radius: 200
     icon: mdi:briefcase
 
-#http:
-#  cors_allowed_origins:
-#    - https://hassio.local:7080
-#  base_url: !secret hass_base_url
-#  ssl_certificate: !secret ssl_certificate
-#  ssl_key: !secret ssl_key
-#  trusted_networks:
-#    - 127.0.0.1
-#    - 192.168.0.0/24
+http:
+  cors_allowed_origins:
+    - https://hassio.local:7080
+  base_url: !secret hass_base_url
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.0.0/24
 
 device_tracker:
   - platform: nmap_tracker
