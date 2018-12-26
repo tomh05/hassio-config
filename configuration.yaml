@@ -28,6 +28,12 @@ sun:
 updater:
   include_used_components: true
 
+light:
+  platform: magicbluelight
+    name: 'Living Room'
+    address: 20:16:01:01:05:a0
+    version: 10
+
 # History
 #recorder:
 #  purge_interval: 1
@@ -53,7 +59,7 @@ weblink:
       url: http://192.168.0.1
     - name: Travis
       icon: mdi:worker
-      url: https://travis-ci.org/tomh05/hassio-config
+      url: https://travis-ci.com/tomh05/hassio-config
     - name: Node Red
       icon: mdi:sitemap
       url: https://tomh05hassio.duckdns.org:1880/
@@ -82,6 +88,7 @@ zone:
     name: Work
     latitude: !secret zone_work_lat
     longitude: !secret zone_work_long
+    radius: 200
     icon: mdi:briefcase
 
 #http:
