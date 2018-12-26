@@ -84,6 +84,7 @@ class MagicBlueLight(Light):
     def turn_on(self, **kwargs):
         """Instruct the light to turn on."""
 
+        _LOGGER.info('Turning on light. %s', kwargs)
 
         if not self._light.test_connection():
             try:
@@ -95,8 +96,10 @@ class MagicBlueLight(Light):
         if not self._state:
             self._light.turn_on()
 
-        if ATTR_RGB_COLOR in kwargs:
+        if ATTR_HS_COLOR in kwargs:
+            brightness = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
             self._rgb = color_util.color_hsv_to_RGB(kwargs[ATTR_HS_COLOR][0], kwargs[ATTR_HS_COLOR][1], kwargs[ATTR_BRIGHTNESS])
+            _LOGGER.info('Set color: %s', self._rgb)
             self._light.set_color(self._rgb)
 
         elif ATTR_RGB_COLOR in kwargs:
