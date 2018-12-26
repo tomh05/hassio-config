@@ -97,8 +97,8 @@ class MagicBlueLight(Light):
             self._light.turn_on()
 
         if ATTR_HS_COLOR in kwargs:
-            brightness = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
-            self._rgb = color_util.color_hsv_to_RGB(kwargs[ATTR_HS_COLOR][0], kwargs[ATTR_HS_COLOR][1], kwargs[ATTR_BRIGHTNESS])
+            brightness = (100.0 * self._brightness) / 255.0
+            self._rgb = color_util.color_hsv_to_RGB(kwargs[ATTR_HS_COLOR][0], kwargs[ATTR_HS_COLOR][1], brightness)
             _LOGGER.info('Set color: %s', self._rgb)
             self._light.set_color(self._rgb)
 
