@@ -2,7 +2,7 @@
   trigger:
     - entity_id: sensor.day_phase
       platform: state
-      to: "night"
+      to: "Night"
   action:
     - service: light.turn_on
       brightness: 2
