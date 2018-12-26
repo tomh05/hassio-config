@@ -3,9 +3,10 @@ import logging
 import voluptuous as vol
 
 # Import the device class from the component that you want to support
-from homeassistant.components.light import ATTR_BRIGHTNESS, ATTR_RGB_COLOR, SUPPORT_COLOR, SUPPORT_BRIGHTNESS, Light, PLATFORM_SCHEMA
+from homeassistant.components.light import ATTR_BRIGHTNESS, ATTR_RGB_COLOR, ATTR_HS_COLOR, SUPPORT_COLOR, SUPPORT_BRIGHTNESS, Light, PLATFORM_SCHEMA
 
 import homeassistant.helpers.config_validation as cv
+import homeassistant.util.color as color_util
 
 # Home Assistant depends on 3rd party packages for API specific code.
 REQUIREMENTS = ['magicblue==0.6.0']
@@ -95,11 +96,15 @@ class MagicBlueLight(Light):
             self._light.turn_on()
 
         if ATTR_RGB_COLOR in kwargs:
+            self._rgb = color_util.color_hsv_to_RGB(kwargs[ATTR_HS_COLOR][0], kwargs[ATTR_HS_COLOR][1], kwargs[ATTR_BRIGHTNESS])
+            self._light.set_color(self._rgb)
+
+        elif ATTR_RGB_COLOR in kwargs:
             self._rgb = kwargs[ATTR_RGB_COLOR]
             self._brightness = 255
             self._light.set_color(self._rgb)
 
-        if ATTR_BRIGHTNESS in kwargs:
+        elif ATTR_BRIGHTNESS in kwargs:
             self._rgb = (255, 255, 255)
             self._brightness = kwargs[ATTR_BRIGHTNESS]
             self._light.turn_on(self._brightness / 255)
