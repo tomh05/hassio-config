@@ -1,16 +1,33 @@
-- alias: Sleep music
+- id: '1545851949432'
+  alias: Sleep music
   trigger:
-    - entity_id: sensor.day_phase
-      platform: state
-      to: "Night"
+  - entity_id: sensor.day_phase
+    platform: state
+    to: Night
+  condition: []
   action:
-    - service: light.turn_on
+  - service: light.turn_on
+    data:
       brightness: 2
-      entity_id: light.test_light
-    - service: media_player.shuffle_set
+    entity_id: light.test_light
+  - service: media_player.shuffle_set
+    data:
       shuffle: true
-      entity_id: media_player.spotify
-    - service: media_player.play_media
-      media_content_type": playlist
-      media_content_id": spotify:user:spotify:playlist:37i9dQZF1DWZd79rJ6a7lp
-      entity_id: media_player.spotify
+    entity_id: media_player.spotify
+  - service: media_player.play_media
+    data:
+      media_content_type: playlist
+      media_content_id: spotify:user:spotify:playlist:37i9dQZF1DWZd79rJ6a7lp
+    entity_id: media_player.spotify
+- id: '1545851949438'
+  alias: night notify
+  trigger:
+  - entity_id: input_boolean.day_phase_night
+    from: 'false'
+    platform: state
+    to: 'true'
+  condition: []
+  action:
+  - data:
+      message: it became night
+    service: persistent_notification.create
