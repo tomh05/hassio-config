@@ -3,7 +3,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.ios_dphone
+    - service: notify.notify
       data_template:
         message: >
           Home Assistant back online! {{ "\uD83E\uDD29" }}
@@ -18,7 +18,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.ios_dphone
+    - service: notify.notify
       data_template:
         message: >
           Home Assistant is going down! {{ "\uD83D\uDE34" }}
