@@ -1,14 +1,24 @@
 lights_living_room:
   name: Living Room
+  icon: mdi:sofa
   entities:
     - input_boolean.living_room_lights
-    - light.living_room
-    - light.living_room_lamp
+    - light.living_room_ceiling_1
+    - light.living_room_ceiling_2
+    - light.kitchen_uplighter
+    - light.dining_table_uplighter
 
 lights_bedroom:
   name: Bedroom
   icon: mdi:hotel
   entities:
     - light.bedroom
-    - light.bedroom_lamp_1
-    - light.bedroom_lamp_2
+    - light.frazers_bedside_lamp
+    - light.toms_bedside_lamp
+
+lights_hallway:
+  name: Hallway
+  icon: mdi:shoe-formal
+  entities:
+    - light.hallway_1
+    - light.hallway_2

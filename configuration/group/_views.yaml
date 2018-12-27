@@ -1,3 +1,4 @@
+# Controls the views shown on Homeassistant's GUI
 default_view:
   name: Home
   view: yes
