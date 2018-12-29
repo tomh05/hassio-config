@@ -42,6 +42,7 @@ lights:
     - sensor.top_floor_light
     - group.lights_living_room
     - group.lights_bedroom
+    - group.lights_spare_bedroom
 
 house:
   name: House
