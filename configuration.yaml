@@ -18,11 +18,12 @@ discovery:
 frontend:
   javascript_version: latest
 map:
+media-extractor:
 hue:
   bridges:
-    - host: 192.168.1.50
+    - host: 192.168.1.31
       allow_unreachable: false
-      allow_hue_groups: true
+      allow_hue_groups: false
 sun:
 updater:
   include_used_components: true
