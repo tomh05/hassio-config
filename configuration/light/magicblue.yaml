@@ -1,0 +1,11 @@
+- platform: magicbluelight
+  name: Spare Bedroom Sidelamp 
+  address: f8:1d:78:60:c0:52
+  version: 10
+
+- platform: magicbluelight
+  name: Spare Bedroom Ceiling 
+  address: f8:1d:78:62:98:6F
+  version: 10
+
+

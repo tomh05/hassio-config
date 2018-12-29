@@ -1,6 +1,0 @@
-- platform: magicbluelight
-  name: Test Light
-  address: f8:1d:78:60:c0:52
-  version: 10
-
-
