@@ -19,6 +19,7 @@ frontend:
   javascript_version: latest
 map:
 media_extractor:
+    default_query: best
 hue:
   bridges:
     - host: 192.168.1.31
