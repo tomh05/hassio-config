@@ -20,7 +20,7 @@ frontend:
 map:
 hue:
   bridges:
-    - host: 192.168.0.2
+    - host: 192.168.1.50
       allow_unreachable: false
       allow_hue_groups: true
 sun:
