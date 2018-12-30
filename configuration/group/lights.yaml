@@ -10,8 +10,8 @@ lights_bedroom:
   icon: mdi:hotel
   entities:
     - light.bedroom_ceiling
-    - light.frazer_bedside
-    - light.tom_bedside
+    - light.bedside_window
+    - light.bedside_door
 
 lights_spare_bedroom:
   name: Spare Bedroom

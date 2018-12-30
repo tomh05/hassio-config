@@ -32,21 +32,25 @@ day_phase:
         day_phase_real:
           friendly_name: "Day Phase Real"
           value_template: >
-            {% if   now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=8).replace(minute=0).replace(second=0) and 
+              # Morning : 8-9am weekdays
+            {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
                     now().isoweekday() <= 5 
             %}
                 Morning
+
+                # Day: sun up, or 9am - 7pm weekday, or 6am-4pm weekend
             {% elif states.sun.sun.state == "above_horizon" 
-                or  now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
+                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=19).replace(minute=0).replace(second=0) and
                     now().isoweekday() <= 5 and 
                     states.input_boolean.holiday_mode.state == "off"
-                or  now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=16).replace(minute=0).replace(second=0)
+                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=19).replace(minute=0).replace(second=0)
             %}
                 Day
-            {% elif now() < now().replace(hour=21).replace(minute=30).replace(second=0) and
+                # Evening: 12pm - 10.30pm
+            {% elif now() < now().replace(hour=22).replace(minute=30).replace(second=0) and
                     now() > now().replace(hour=12).replace(minute=0).replace(second=0) 
             %}
                 Evening

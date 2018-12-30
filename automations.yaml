@@ -20,7 +20,7 @@
       media_content_id: spotify:user:spotify:playlist:37i9dQZF1DWZd79rJ6a7lp
     entity_id: media_player.spotify
 - id: '1545851949438'
-  alias: night notify
+  alias: Bedtime Lights
   trigger:
   - entity_id: input_boolean.day_phase_night
     from: 'false'
@@ -28,6 +28,18 @@
     to: 'true'
   condition: []
   action:
-  - data:
-      message: it became night
-    service: persistent_notification.create
+  - service: light.turn_on
+    data:
+      color_temp: 450
+      brightness_pct: 30
+    entity_id: light.bedside_window
+  - service: light.turn_on
+    data:
+      color_temp: 450
+      brightness_pct: 30
+    entity_id: light.bedside_door
+  - service: light.turn_on
+    data:
+      color_temp: 450
+      brightness_pct: 20
+    entity_id: light.bedroom_ceiling
