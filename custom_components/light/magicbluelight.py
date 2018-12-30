@@ -1,9 +1,17 @@
+"""
+This component provides light support for the Magicblue bluetooth bulbs.
+
+For more details about this platform, please refer to the documentation at
+https://home-assistant.io/components/light.magicblue/
+"""
 import logging
 
 import voluptuous as vol
 
 # Import the device class from the component that you want to support
-from homeassistant.components.light import ATTR_BRIGHTNESS, ATTR_RGB_COLOR, ATTR_HS_COLOR, SUPPORT_COLOR, SUPPORT_BRIGHTNESS, Light, PLATFORM_SCHEMA
+from homeassistant.components.light import (
+    ATTR_BRIGHTNESS, ATTR_RGB_COLOR, ATTR_HS_COLOR, SUPPORT_COLOR,
+    SUPPORT_BRIGHTNESS, Light, PLATFORM_SCHEMA)
 
 import homeassistant.helpers.config_validation as cv
 import homeassistant.util.color as color_util
@@ -24,22 +32,18 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 _LOGGER = logging.getLogger(__name__)
 
+
 def setup_platform(hass, config, add_devices, discovery_info=None):
-    """Setup the MagicBlue platform."""
+    """Set up the MagicBlue platform."""
     from magicblue import MagicBlue
 
-    # Assign configuration variables. The configuration check takes care they are
-    # present.
+    # Assign configuration variables. The configuration check
+    # takes care they are present.
     bulb_name = config.get(CONF_NAME)
     bulb_mac_address = config.get(CONF_ADDRESS)
     bulb_version = config.get(CONF_VERSION)
 
     bulb = MagicBlue(bulb_mac_address, bulb_version)
-
-    # try:
-    #     bulb.connect()
-    # except Exception as e:
-    #     _LOGGER.error('Could not connect to the MagicBlue %s', bulb_mac_address)
 
     # Add devices
     add_devices([MagicBlueLight(bulb, bulb_name)])
@@ -68,7 +72,7 @@ class MagicBlueLight(Light):
 
     @property
     def brightness(self):
-        """Return the brightness of the light (an integer in the range 1-255)."""
+        """Return the brightness of the light (integer 1-255)."""
         return self._brightness
 
     @property
@@ -83,14 +87,12 @@ class MagicBlueLight(Light):
 
     def turn_on(self, **kwargs):
         """Instruct the light to turn on."""
-
-        _LOGGER.info('Turning on light. %s', kwargs)
-
         if not self._light.test_connection():
             try:
                 self._light.connect()
-            except Exception as e:
-                _LOGGER.error('Could not connect to the MagicBlue %s', bulb_mac_address)
+            except Exception as err:  # pylint: disable=broad-except
+                error_message = 'Connection failed for magicblue %s: %s'
+                _LOGGER.error(error_message, self._name, err)
                 return
 
         if not self._state:
@@ -98,8 +100,9 @@ class MagicBlueLight(Light):
 
         if ATTR_HS_COLOR in kwargs:
             brightness = (100.0 * self._brightness) / 255.0
-            self._rgb = color_util.color_hsv_to_RGB(kwargs[ATTR_HS_COLOR][0], kwargs[ATTR_HS_COLOR][1], brightness)
-            _LOGGER.info('Set color: %s', self._rgb)
+            hue = kwargs[ATTR_HS_COLOR][0]
+            sat = kwargs[ATTR_HS_COLOR][1]
+            self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness)
             self._light.set_color(self._rgb)
 
         elif ATTR_RGB_COLOR in kwargs:
@@ -119,10 +122,10 @@ class MagicBlueLight(Light):
         if not self._light.test_connection():
             try:
                 self._light.connect()
-            except Exception as e:
-                _LOGGER.error('Could not connect to the MagicBlue %s', bulb_mac_address)
+            except Exception as err:  # pylint: disable=broad-except
+                error_message = 'Connection failed for magicblue %s: %s'
+                _LOGGER.error(error_message, self._name, err)
                 return
 
         self._light.turn_off()
         self._state = False
-
