@@ -7,6 +7,7 @@ https://home-assistant.io/components/light.magicblue/
 import logging
 
 import voluptuous as vol
+from homeassistant.util import Throttle
 
 # Import the device class from the component that you want to support
 from homeassistant.components.light import (
@@ -85,7 +86,7 @@ class MagicBlueLight(Light):
         """Return the supported features."""
         return SUPPORT_BRIGHTNESS | SUPPORT_COLOR
 
-    @util.Throttle(timedelta(seconds=1))
+    @Throttle(timedelta(seconds=1))
     def turn_on(self, **kwargs):
         """Instruct the light to turn on."""
         if not self._light.test_connection():
@@ -118,7 +119,7 @@ class MagicBlueLight(Light):
 
         self._state = True
 
-    @util.Throttle(timedelta(seconds=1))
+    @Throttle(timedelta(seconds=1))
     def turn_off(self, **kwargs):
         """Instruct the light to turn off."""
         if not self._light.test_connection():
