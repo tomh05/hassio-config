@@ -1,4 +1,4 @@
 # TP Link Smart Plugs
 - platform: tplink
   name: Living Room Speakers
-  host: 192.168.0.42
+  host: 192.168.1.28
