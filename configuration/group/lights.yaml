@@ -2,7 +2,6 @@ lights_living_room:
   name: Living Room
   icon: mdi:sofa
   entities:
-    - input_boolean.living_room_lights
     - light.kitchen_uplighter
     - light.dining_table_uplighter
 

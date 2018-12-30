@@ -4,8 +4,7 @@ default_view:
   view: yes
   entities:
     - binary_sensor.occupied
-    - device_tracker.dphone
-    - device_tracker.laurens_iphone
+    - device_tracker.phone
     - sensor.day_phase
     - sun.sun
     - sensor.weather_symbol
@@ -15,14 +14,12 @@ default_view:
     - group.house_climate_control
     - group.media_players_active
     - group.system_links
-    - light.test_light
 
 living_room:
   name: Living Room
   icon: mdi:sofa
   view: yes
   entities:
-    - binary_sensor.living_room_motion
     - sensor.living_room_light
     - sensor.living_room_temperature
     - group.living_room_activities

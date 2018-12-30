@@ -1,0 +1,7 @@
+- platform: webostv
+  name: TV
+  host: 192.168.1.23
+  turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+          mac: "20-3D-BD-97-4D-FC"
