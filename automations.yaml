@@ -22,10 +22,9 @@
 - id: '1545851949438'
   alias: Bedtime Lights
   trigger:
-  - entity_id: input_boolean.day_phase_night
-    from: 'false'
+  - entity_id: sensor.day_phase
     platform: state
-    to: 'true'
+    to: 'Night'
   condition: []
   action:
   - service: light.turn_on
