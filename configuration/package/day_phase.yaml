@@ -31,8 +31,8 @@ day_phase:
             {% endif %}
         day_phase_real:
           friendly_name: "Day Phase Real"
+          # Morning : 8-9am weekdays
           value_template: >
-              # Morning : 8-9am weekdays
             {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
                     now().isoweekday() <= 5 
