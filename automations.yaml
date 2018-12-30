@@ -30,15 +30,15 @@
   - service: light.turn_on
     data:
       color_temp: 450
-      brightness_pct: 30
+      brightness_pct: 25
       entity_id: light.bedside_window
   - service: light.turn_on
     data:
       color_temp: 450
-      brightness_pct: 30
+      brightness_pct: 25
       entity_id: light.bedside_door
   - service: light.turn_on
     data:
       color_temp: 450
-      brightness_pct: 20
+      brightness_pct: 15
       entity_id: light.bedroom_ceiling
