@@ -51,8 +51,10 @@ logbook:
     entities:
       - sensor.cpu_temp
 logger:
+    default: warning
   logs:
-     homeassistant.components.hue: debug
+     homeassistant.lights.magicbluelight: debug
+     magicblue.magicbluelib: debug
      homeassistant.components.device_tracker.nmap_tracker: warn
 
 # external links
