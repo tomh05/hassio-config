@@ -1,11 +1,11 @@
-lights_living_room:
+- platform: group
   name: Living Room
   icon: mdi:sofa
   entities:
     - light.kitchen_uplighter
     - light.dining_table_uplighter
 
-lights_bedroom:
+- platform: group
   name: Bedroom
   icon: mdi:hotel
   entities:
@@ -13,14 +13,14 @@ lights_bedroom:
     - light.bedside_window
     - light.bedside_door
 
-lights_spare_bedroom:
+- platform: group
   name: Spare Bedroom
   icon: mdi:hotel
   entities:
     - light.spare_bedroom_ceiling
     - light.spare_bedroom_bedside
 
-lights_hallway:
+- platform: group
   name: Hallway
   icon: mdi:shoe-formal
   entities:
