@@ -38,21 +38,22 @@ panel_custom:
     config: !include floorplan.yaml
 
 # History
-#recorder:
-#  purge_interval: 1
-#  purge_keep_days: 14
-#  exclude:
-#    entities:
-#      - sensor.date
-#logbook:
-#  exclude:
-#    domains:
-#      - group
-#    entities:
-#      - sensor.cpu_temp
-# logger:
-#   logs:
-#     homeassistant.components.hue: debug
+recorder:
+  purge_interval: 1
+  purge_keep_days: 14
+  exclude:
+    entities:
+      - sensor.date
+logbook:
+  exclude:
+    domains:
+      - group
+    entities:
+      - sensor.cpu_temp
+logger:
+  logs:
+     homeassistant.components.hue: debug
+     homeassistant.components.device_tracker.nmap_tracker: warn
 
 # external links
 weblink:
