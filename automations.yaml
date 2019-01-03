@@ -43,19 +43,22 @@
       brightness_pct: 15
       entity_id: light.bedroom_ceiling
 - id: '3545251949432'
-  alias: Morning Energise Routine
+  alias: Workday Morning Energise Routine
   trigger:
   - entity_id: sensor.day_phase
     platform: state
     from: Night
     to: Morning
-  condition: []
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
   action:
   - service: light.turn_on
     entity_id: light.bedroom
     data:
-      brightness: 1
-      kelvin: 4000
+      brightness_pct: 1
+      kelvin: 2000
   - service: light.turn_on
     entity_id: light.bedroom
     data:
