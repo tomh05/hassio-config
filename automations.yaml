@@ -76,8 +76,22 @@
     data:
       brightness_pct: 1
       kelvin: 2000
+
+  - delay: '00:00:10'
   - service: light.turn_on
-    entity_id: light.bedroom
+    entity_id: light.bedroom_ceiling
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 180
+  - service: light.turn_on
+    entity_id: light.bedroom_door
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 180
+  - service: light.turn_on
+    entity_id: light.bedroom_window
     data:
       brightness_pct: 100
       kelvin: 6500
