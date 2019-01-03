@@ -55,7 +55,24 @@
     state: 'on'
   action:
   - service: light.turn_on
-    entity_id: light.bedroom
+    entity_id: light.bedroom_ceiling
+    data:
+      brightness_pct: 1
+      kelvin: 2000
+  - service: light.turn_on
+    entity_id: light.bedroom_ceiling
+    data:
+      brightness_pct: 5
+      kelvin: 2000
+      transition: 10
+  - delay: '00:00:10'
+  - service: light.turn_on
+    entity_id: light.bedroom_door
+    data:
+      brightness_pct: 1
+      kelvin: 2000
+  - service: light.turn_on
+    entity_id: light.bedroom_window
     data:
       brightness_pct: 1
       kelvin: 2000
@@ -64,4 +81,4 @@
     data:
       brightness_pct: 100
       kelvin: 6500
-      transition: 60
+      transition: 180
