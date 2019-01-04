@@ -55,6 +55,7 @@ logger:
     logs:
         homeassistant.lights.magicbluelight: debug
         magicblue.magicbluelib: debug
+        homeassistant.media_player.spotify: info
         homeassistant.components.device_tracker.nmap_tracker: warn
 
 # external links
