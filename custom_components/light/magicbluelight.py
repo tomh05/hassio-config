@@ -145,7 +145,7 @@ class MagicBlueLight(Light):
                 return
         info = self._light.get_device_info()
         _LOGGER.info('light info %s', info)
-        _LOGGER.info('brightness ', info['brightness')
+        _LOGGER.info('brightness %s', info['brightness'])
         _LOGGER.info('r ', info['r'])
         self._brightness = info['brightness']
         self._rgb = (info['r'], info['g'], info['b'])
