@@ -133,3 +133,20 @@ class MagicBlueLight(Light):
 
         self._light.turn_off()
         self._state = False
+
+    def update(self):
+        _LOGGER.warn('light update is taking place')
+        if not self._light.test_connection():
+            try:
+                self._light.connect()
+            except Exception as err:  # pylint: disable=broad-except
+                error_message = 'Connection failed for magicblue %s: %s'
+                _LOGGER.error(error_message, self._name, err)
+                return
+        info = self._light.get_device_info()
+        _LOGGER.warn('light info ', info)
+        _LOGGER.warn('brightness ', info.brightness)
+        _LOGGER.warn('r ', info.r)
+        self._brightness = info.brightness
+        self._rgb = (info.r, info.g, info.b)
+
