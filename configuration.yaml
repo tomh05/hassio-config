@@ -28,6 +28,8 @@ hue:
 sun:
 updater:
     include_used_components: true
+wake_on_lan:
+
 
 # Enable Floorplan Panel
 panel_custom:
