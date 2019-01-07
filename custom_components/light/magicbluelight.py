@@ -144,9 +144,10 @@ class MagicBlueLight(Light):
                 _LOGGER.error(error_message, self._name, err)
                 return
         info = self._light.get_device_info()
-        _LOGGER.warn('light info ', info)
-        _LOGGER.warn('brightness ', info.brightness)
-        _LOGGER.warn('r ', info.r)
-        self._brightness = info.brightness
-        self._rgb = (info.r, info.g, info.b)
+        _LOGGER.info('light info %s', info)
+        _LOGGER.info('brightness ', info['brightness')
+        _LOGGER.info('r ', info[r])
+        self._brightness = info['brightness']
+        self._rgb = (info['r'], info['g'], info.['b'])
+        self._state = info['on']
 
