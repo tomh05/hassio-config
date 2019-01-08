@@ -13,7 +13,7 @@ from datetime import timedelta
 # Import the device class from the component that you want to support
 from homeassistant.components.light import (
     ATTR_BRIGHTNESS, ATTR_RGB_COLOR, ATTR_HS_COLOR, SUPPORT_COLOR,
-    SUPPORT_BRIGHTNESS, ATTR_WHITE_VALUE, Light, PLATFORM_SCHEMA)
+    SUPPORT_BRIGHTNESS, SUPPORT_WHITE_VALUE, ATTR_WHITE_VALUE, Light, PLATFORM_SCHEMA)
 
 import homeassistant.helpers.config_validation as cv
 import homeassistant.util.color as color_util
