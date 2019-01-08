@@ -176,7 +176,14 @@ class MagicBlueLight(Light):
                 return
         info = self._light.get_device_info()
         _LOGGER.debug('light info %s', info)
-        self._brightness = info['brightness']
+        self._white_value = info['brightness']
         self._rgb = (info['r'], info['g'], info['b'])
         self._state = info['on']
-
+        if (self._state):
+            if( self.white_value > 0):
+                self._mode = MODE_WHITE
+                self._brightness = self._white_value
+            else:
+                self._mode = MODE_COLOR
+                (r, g, b) = self._rgb
+                (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(r, g, b)
