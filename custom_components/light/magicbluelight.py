@@ -123,12 +123,14 @@ class MagicBlueLight(Light):
             hue = kwargs[ATTR_HS_COLOR][0]
             sat = kwargs[ATTR_HS_COLOR][1]
             self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
+            self._white_value = 0
             self._light.set_color(self._rgb)
             _LOGGER.debug('setting color to %s', self._rgb)
 
         elif ATTR_RGB_COLOR in kwargs:
             self._mode = MODE_COLOR
             self._rgb = kwargs[ATTR_RGB_COLOR]
+            self._white_value = 0
             (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(*self._rgb)
             self._light.set_color(self._rgb)
             _LOGGER.debug('setting color to %s', self._rgb)
