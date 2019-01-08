@@ -145,12 +145,14 @@ class MagicBlueLight(Light):
             # if we are in white mode, just 
             if (self._mode == MODE_WHITE):
                 self._white_value = kwargs[ATTR_BRIGHTNESS]
+                self._brightness = kwargs[ATTR_BRIGHTNESS]
                 self._light.turn_on(self._brightness / 255)
                 _LOGGER.debug('setting brightness to %s', self._brightness)
             else:
                 brightness_pct = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
                 (hue, sat, val) = color_util.color_RGB_to_hsv(*self._rgb)
                 self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
+                self._brightness = kwargs[ATTR_BRIGHTNESS]
                 self._light.set_color(self._rgb)
                 _LOGGER.debug('setting color to %s', self._rgb)
 
@@ -190,3 +192,5 @@ class MagicBlueLight(Light):
             else:
                 self._mode = MODE_COLOR
                 (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(*self._rgb)
+                _LOGGER.debug('got rgb of %s', self._rgb)
+                _LOGGER.debug('calculated brightness as %s', self._brightness)
