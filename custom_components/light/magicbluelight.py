@@ -78,6 +78,12 @@ class MagicBlueLight(Light):
         return self._rgb
 
     @property
+    def hs_color(self):
+        """Return the HS color value."""
+        (hue, sat, val) = color_util.color_RGB_to_hsv(*self._rgb)
+        return (hue, sat)
+
+    @property
     def brightness(self):
         """Return the brightness of the light (integer 1-255)."""
         return self._brightness
@@ -123,8 +129,7 @@ class MagicBlueLight(Light):
         elif ATTR_RGB_COLOR in kwargs:
             self._mode = MODE_COLOR
             self._rgb = kwargs[ATTR_RGB_COLOR]
-            (r, g, b) = self._rgb
-            (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(r, g, b)
+            (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(*self._rgb)
             self._light.set_color(self._rgb)
             _LOGGER.debug('setting color to %s', self._rgb)
 
@@ -144,8 +149,7 @@ class MagicBlueLight(Light):
                 _LOGGER.debug('setting brightness to %s', self._brightness)
             else:
                 brightness_pct = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
-                (r, g, b) = self._rgb
-                (hue, sat, val) = color_util.color_RGB_to_hsv(r,g,b)
+                (hue, sat, val) = color_util.color_RGB_to_hsv(*self._rgb)
                 self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
                 self._light.set_color(self._rgb)
                 _LOGGER.debug('setting color to %s', self._rgb)
@@ -185,5 +189,4 @@ class MagicBlueLight(Light):
                 self._brightness = self._white_value
             else:
                 self._mode = MODE_COLOR
-                (r, g, b) = self._rgb
-                (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(r, g, b)
+                (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(*self._rgb)
