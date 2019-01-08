@@ -1,5 +1,11 @@
 light.bedroom:
-  icon: mdi:lightbulb-outline
+  icon: mdi:bed-empty
 
 light.living_room:
-  icon: mdi:lightbulb-outline
+  icon: mdi:sofa
+
+light.spare_bedroom:
+  icon: mdi:desk-lamp
+
+light.hallway:
+  icon: mdi:shoe-formal
