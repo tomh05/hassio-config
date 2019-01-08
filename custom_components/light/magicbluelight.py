@@ -13,7 +13,7 @@ from datetime import timedelta
 # Import the device class from the component that you want to support
 from homeassistant.components.light import (
     ATTR_BRIGHTNESS, ATTR_RGB_COLOR, ATTR_HS_COLOR, SUPPORT_COLOR,
-    SUPPORT_BRIGHTNESS, Light, PLATFORM_SCHEMA)
+    SUPPORT_BRIGHTNESS, ATTR_WHITE_VALUE, Light, PLATFORM_SCHEMA)
 
 import homeassistant.helpers.config_validation as cv
 import homeassistant.util.color as color_util
@@ -24,6 +24,9 @@ REQUIREMENTS = ['magicblue==0.6.0']
 CONF_NAME = 'name'
 CONF_ADDRESS = 'address'
 CONF_VERSION = 'version'
+
+MODE_WHITE = 'white'
+MODE_COLOR = 'color'
 
 # Validation of the user's configuration
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
@@ -61,6 +64,8 @@ class MagicBlueLight(Light):
         self._state = False
         self._rgb = (255, 255, 255)
         self._brightness = 255
+        self._white_value = 255
+        self._mode = MODE_WHITE
 
     @property
     def name(self):
@@ -78,6 +83,11 @@ class MagicBlueLight(Light):
         return self._brightness
 
     @property
+    def white_value(self):
+        """Return the white value of the light (integer 1-255)."""
+        return self._white_value
+
+    @property
     def is_on(self):
         """Return true if light is on."""
         return self._state
@@ -85,7 +95,7 @@ class MagicBlueLight(Light):
     @property
     def supported_features(self):
         """Return the supported features."""
-        return SUPPORT_BRIGHTNESS | SUPPORT_COLOR
+        return SUPPORT_BRIGHTNESS | SUPPORT_COLOR | SUPPORT_WHITE_VALUE
 
     @Throttle(timedelta(seconds=1))
     def turn_on(self, **kwargs):
@@ -102,21 +112,43 @@ class MagicBlueLight(Light):
             self._light.turn_on()
 
         if ATTR_HS_COLOR in kwargs:
-            brightness = (100.0 * self._brightness) / 255.0
+            self._mode = MODE_COLOR
+            brightness_pct = (100.0 * self._brightness) / 255.0
             hue = kwargs[ATTR_HS_COLOR][0]
             sat = kwargs[ATTR_HS_COLOR][1]
-            self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness)
+            self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
             self._light.set_color(self._rgb)
+            _LOGGER.debug('setting color to %s', self._rgb)
 
         elif ATTR_RGB_COLOR in kwargs:
+            self._mode = MODE_COLOR
             self._rgb = kwargs[ATTR_RGB_COLOR]
-            self._brightness = 255
+            (r, g, b) = self._rgb
+            (x, y, self._brightness) = color_util.color_RGB_to_xy_brightness(r, g, b)
             self._light.set_color(self._rgb)
+            _LOGGER.debug('setting color to %s', self._rgb)
+
+        elif ATTR_WHITE_VALUE in kwargs:
+            self._mode = MODE_WHITE
+            self._rgb = (0, 0, 0)
+            self._white_value = kwargs[ATTR_WHITE_VALUE]
+            self._brightness = kwargs[ATTR_WHITE_VALUE]
+            self._light.turn_on(self._brightness / 255)
+            _LOGGER.debug('setting brightness to %s', self._brightness)
 
         elif ATTR_BRIGHTNESS in kwargs:
-            self._rgb = (255, 255, 255)
-            self._brightness = kwargs[ATTR_BRIGHTNESS]
-            self._light.turn_on(self._brightness / 255)
+            # if we are in white mode, just 
+            if (self._mode == MODE_WHITE):
+                self._white_value = kwargs[ATTR_BRIGHTNESS]
+                self._light.turn_on(self._brightness / 255)
+                _LOGGER.debug('setting brightness to %s', self._brightness)
+            else:
+                brightness_pct = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
+                (r, g, b) = self._rgb
+                (hue, sat, val) = color_util.color_RGB_to_hsv(r,g,b)
+                self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
+                self._light.set_color(self._rgb)
+                _LOGGER.debug('setting color to %s', self._rgb)
 
         self._state = True
 

@@ -55,7 +55,7 @@ logbook:
 logger:
     default: warning
     logs:
-        homeassistant.lights.magicbluelight: debug
+        homeassistant.light.magicbluelight: debug
         magicblue.magicbluelib: debug
         homeassistant.media_player.spotify: info
         homeassistant.components.device_tracker.nmap_tracker: warn
