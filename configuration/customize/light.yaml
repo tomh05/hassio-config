@@ -1,11 +1,11 @@
 light.bedroom:
-  icon: mdi:bed-empty
+  icon: mdi:hotel
 
 light.living_room:
   icon: mdi:sofa
 
 light.spare_bedroom:
-  icon: mdi:desk-lamp
+  icon: mdi:bed-empty
 
 light.hallway:
   icon: mdi:shoe-formal

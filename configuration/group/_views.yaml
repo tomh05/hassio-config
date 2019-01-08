@@ -20,13 +20,12 @@ living_room:
   icon: mdi:sofa
   view: yes
   entities:
-    - sensor.living_room_light
-    - sensor.living_room_temperature
-    - group.living_room_activities
-    - group.living_room_tv
     - light.living_room
+    - light.kitchen_uplighter
+    - light.dining_table_uplighter
     - switch.living_room_speakers
-    - media_player.living_room_tv
+    - media_player.chromecast
+    - media_player.tv
 
 lights:
   name: Lights
@@ -39,8 +38,18 @@ lights:
     - sensor.living_room_light
     - sensor.top_floor_light
     - light.living_room
+    - light.kitchen_uplighter
+    - light.dining_table_uplighter
     - light.bedroom
+    - light.bedroom_ceiling
+    - light.bedside_door
+    - light.bedside_window
     - light.spare_bedroom
+    - light.spare_bedroom_ceiling
+    - light.spare_bedroom_bedside
+    - light.hallway
+    - light.hallway_entrance
+    - light.hallway_corridoor
 
 house:
   name: House

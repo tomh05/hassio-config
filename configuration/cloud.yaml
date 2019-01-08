@@ -1,7 +1,7 @@
 google_actions:
   filter:
     include_entities:
-      - switch.living_room_tv
+      - switch.chromecast
 
       - script.cinema_mode
 
