@@ -180,7 +180,7 @@ class MagicBlueLight(Light):
         self._rgb = (info['r'], info['g'], info['b'])
         self._state = info['on']
         if (self._state):
-            if( self.white_value > 0):
+            if( self._white_value > 0):
                 self._mode = MODE_WHITE
                 self._brightness = self._white_value
             else:
