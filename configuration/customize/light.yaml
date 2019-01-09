@@ -2,7 +2,7 @@ light.bedroom:
   icon: mdi:hotel
 
 light.bedroom_ceiling:
-  icon: mdi:ceiling-lamp
+  icon: mdi:ceiling-light
 
 light.bedside_door:
   icon: mdi:lamp
@@ -16,5 +16,17 @@ light.living_room:
 light.spare_bedroom:
   icon: mdi:bed-empty
 
+light.spare_bedroom_bedside:
+  icon: mdi:lamp
+
+light.spare_bedroom_ceiling:
+  icon: mdi:ceiling-light
+
 light.hallway:
   icon: mdi:shoe-formal
+
+light.hallway_entrance:
+  icon: mdi:ceiling-light
+
+light.hallway_corridoor:
+  icon: mdi:ceiling-light
