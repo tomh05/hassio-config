@@ -1,6 +1,15 @@
 light.bedroom:
   icon: mdi:hotel
 
+light.bedroom_ceiling:
+  icon: mdi:ceiling-lamp
+
+light.bedside_door:
+  icon: mdi:lamp
+
+light.bedside_window:
+  icon: mdi:lamp
+
 light.living_room:
   icon: mdi:sofa
 

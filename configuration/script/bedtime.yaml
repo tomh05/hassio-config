@@ -1,0 +1,11 @@
+bedtime:
+  sequence:
+  - service: light.turn_on
+    entity_id:
+    - light.hallway
+    data:
+        brightness: 2
+  - service: hue.hue_activate_scene
+    data:
+      group_name: 'Bedroom'
+      scene_name: 'Night Sky'

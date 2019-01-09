@@ -8,3 +8,7 @@
 - name: Relaxed Cooking
   entities:
     script.relaxed_cooking: on
+
+- name: Bedtime
+  entities:
+    script.bedtime: on
