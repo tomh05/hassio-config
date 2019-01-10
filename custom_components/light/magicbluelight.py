@@ -10,6 +10,7 @@ import logging
 import voluptuous as vol
 from homeassistant.util import Throttle
 from datetime import timedelta
+from functools import partial
 
 # Import the device class from the component that you want to support
 from homeassistant.components.light import (
