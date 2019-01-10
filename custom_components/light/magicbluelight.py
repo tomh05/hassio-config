@@ -117,7 +117,9 @@ class MagicBlueLight(Light):
                 connection = await self.hass.async_add_job(self._light.connect)
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
+
             _LOGGER.error(error_message, self._name, err)
+            _LOGGER.error('additional msg: %s , %s', err.estat, err.emsg)
             traceback.print_tb(err.__traceback__)
             return
 
@@ -195,6 +197,7 @@ class MagicBlueLight(Light):
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
             _LOGGER.error(error_message, self._name, err)
+            _LOGGER.error('additional msg: %s , %s', err.estat, err.emsg)
             traceback.print_tb(err.__traceback__)
             return
         info = await self.hass.async_add_job(self._light.get_device_info)
