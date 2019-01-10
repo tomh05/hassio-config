@@ -105,7 +105,7 @@ class MagicBlueLight(Light):
         """Return the supported features."""
         return SUPPORT_BRIGHTNESS | SUPPORT_COLOR | SUPPORT_WHITE_VALUE
 
-    #@Throttle(timedelta(seconds=1))
+    @Throttle(timedelta(seconds=1))
     async def async_turn_on(self, **kwargs):
         _LOGGER.debug('called turn_on for %s', self._name)
         """Instruct the light to turn on."""
@@ -169,7 +169,7 @@ class MagicBlueLight(Light):
 
         self._state = True
 
-    #@Throttle(timedelta(seconds=1))
+    @Throttle(timedelta(seconds=1))
     async def async_turn_off(self, **kwargs):
         """Instruct the light to turn off."""
         try:
