@@ -6,6 +6,8 @@ https://home-assistant.io/components/light.magicblue/
 """
 import asyncio
 import logging
+import traceback
+
 
 import voluptuous as vol
 from homeassistant.util import Throttle
@@ -116,6 +118,7 @@ class MagicBlueLight(Light):
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
             _LOGGER.error(error_message, self._name, err)
+            traceback.print_tb(err.__traceback__)
             return
 
         if not self._state:
@@ -192,6 +195,7 @@ class MagicBlueLight(Light):
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
             _LOGGER.error(error_message, self._name, err)
+            traceback.print_tb(err.__traceback__)
             return
         info = await self.hass.async_add_job(self._light.get_device_info)
         _LOGGER.debug('light info %s', info)
