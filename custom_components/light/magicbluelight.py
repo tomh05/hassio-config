@@ -52,7 +52,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     bulb = MagicBlue(bulb_mac_address, bulb_version)
 
     # Add devices
-    async_add_entities([MagicBlueLight(bulb, bulb_name)], updateBeforeAdd=True)
+    async_add_entities([MagicBlueLight(bulb, bulb_name)], update_before_add=True)
 
 
 class MagicBlueLight(Light):
