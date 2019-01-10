@@ -107,6 +107,7 @@ class MagicBlueLight(Light):
 
     #@Throttle(timedelta(seconds=1))
     async def async_turn_on(self, **kwargs):
+        _LOGGER.debug('called turn_on for %s', self._name)
         """Instruct the light to turn on."""
         try:
             connected = await self.hass.async_add_job(self._light.test_connection)
