@@ -166,25 +166,25 @@ class MagicBlueLight(Light):
     @Throttle(timedelta(seconds=1))
     def turn_off(self, **kwargs):
         """Instruct the light to turn off."""
-        if not self._light.test_connection():
-            try:
+        try:
+            if not self._light.test_connection():
                 self._light.connect()
-            except Exception as err:  # pylint: disable=broad-except
-                error_message = 'Connection failed for magicblue %s: %s'
-                _LOGGER.error(error_message, self._name, err)
-                return
+        except Exception as err:  # pylint: disable=broad-except
+            error_message = 'Connection failed for magicblue %s: %s'
+            _LOGGER.error(error_message, self._name, err)
+            return
 
         self._light.turn_off()
         self._state = False
 
     def update(self):
-        if not self._light.test_connection():
-            try:
+        try:
+            if not self._light.test_connection():
                 self._light.connect()
-            except Exception as err:  # pylint: disable=broad-except
-                error_message = 'Connection failed for magicblue %s: %s'
-                _LOGGER.error(error_message, self._name, err)
-                return
+        except Exception as err:  # pylint: disable=broad-except
+            error_message = 'Connection failed for magicblue %s: %s'
+            _LOGGER.error(error_message, self._name, err)
+            return
         info = self._light.get_device_info()
         _LOGGER.debug('light info %s', info)
         self._white_value = info['brightness']
