@@ -4,6 +4,7 @@ This component provides light support for the Magicblue bluetooth bulbs.
 For more details about this platform, please refer to the documentation at
 https://home-assistant.io/components/light.magicblue/
 """
+import asyncio
 import logging
 
 import voluptuous as vol
@@ -38,7 +39,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 _LOGGER = logging.getLogger(__name__)
 
 
-def setup_platform(hass, config, add_devices, discovery_info=None):
+async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Set up the MagicBlue platform."""
     from magicblue import MagicBlue
 
@@ -51,7 +52,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     bulb = MagicBlue(bulb_mac_address, bulb_version)
 
     # Add devices
-    add_devices([MagicBlueLight(bulb, bulb_name)])
+    async_add_entities([MagicBlueLight(bulb, bulb_name)], updateBeforeAdd=True)
 
 
 class MagicBlueLight(Light):
@@ -103,19 +104,20 @@ class MagicBlueLight(Light):
         """Return the supported features."""
         return SUPPORT_BRIGHTNESS | SUPPORT_COLOR | SUPPORT_WHITE_VALUE
 
-    @Throttle(timedelta(seconds=1))
-    def turn_on(self, **kwargs):
+    #@Throttle(timedelta(seconds=1))
+    async def async_turn_on(self, **kwargs):
         """Instruct the light to turn on."""
-        if not self._light.test_connection():
-            try:
-                self._light.connect()
-            except Exception as err:  # pylint: disable=broad-except
-                error_message = 'Connection failed for magicblue %s: %s'
-                _LOGGER.error(error_message, self._name, err)
-                return
+        try:
+            connected = await self.hass.async_add_job(self._light.test_connection)
+            if not connected: 
+                connection = await self.hass.async_add_job(self._light.connect)
+        except Exception as err:  # pylint: disable=broad-except
+            error_message = 'Connection failed for magicblue %s: %s'
+            _LOGGER.error(error_message, self._name, err)
+            return
 
         if not self._state:
-            self._light.turn_on()
+            await self.hass.async_add_job(self._light.turn_on)
 
         if ATTR_HS_COLOR in kwargs:
             self._mode = MODE_COLOR
@@ -125,6 +127,7 @@ class MagicBlueLight(Light):
             self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
             self._white_value = 0
             self._light.set_color(self._rgb)
+            await self.hass.async_add_job(partial(self._light.set_color, self._rgb))
             _LOGGER.debug('setting color to %s', self._rgb)
 
         elif ATTR_RGB_COLOR in kwargs:
@@ -135,7 +138,7 @@ class MagicBlueLight(Light):
             self._white_value = 0
             #(h, s, v) = color_util.color_RGB_to_hsv(*self._rgb)
             #self._brightness = v * 255 / 100
-            self._light.set_color(self._rgb)
+            await self.hass.async_add_job(partial(self._light.set_color, self._rgb))
             _LOGGER.debug('setting color to %s', self._rgb)
 
         elif ATTR_WHITE_VALUE in kwargs:
@@ -144,6 +147,7 @@ class MagicBlueLight(Light):
             self._white_value = kwargs[ATTR_WHITE_VALUE]
             self._brightness = kwargs[ATTR_WHITE_VALUE]
             self._light.turn_on(self._brightness / 255)
+            await self.hass.async_add_job(partial(self._light.turn_on, self._brightness / 255))
             _LOGGER.debug('setting brightness to %s', self._brightness)
 
         elif ATTR_BRIGHTNESS in kwargs:
@@ -151,41 +155,43 @@ class MagicBlueLight(Light):
             if (self._mode == MODE_WHITE):
                 self._white_value = kwargs[ATTR_BRIGHTNESS]
                 self._brightness = kwargs[ATTR_BRIGHTNESS]
-                self._light.turn_on(self._brightness / 255)
+                await self.hass.async_add_job(partial(self._light.turn_on, self._brightness / 255))
                 _LOGGER.debug('setting brightness to %s', self._brightness)
             else:
                 brightness_pct = (100.0 * kwargs[ATTR_BRIGHTNESS]) / 255.0
                 (hue, sat, val) = color_util.color_RGB_to_hsv(*self._rgb)
                 self._rgb = color_util.color_hsv_to_RGB(hue, sat, brightness_pct)
                 self._brightness = kwargs[ATTR_BRIGHTNESS]
-                self._light.set_color(self._rgb)
+                await self.hass.async_add_job(partial(self._light.set_color, self._rgb))
                 _LOGGER.debug('setting color to %s', self._rgb)
 
         self._state = True
 
-    @Throttle(timedelta(seconds=1))
-    def turn_off(self, **kwargs):
+    #@Throttle(timedelta(seconds=1))
+    async def async_turn_off(self, **kwargs):
         """Instruct the light to turn off."""
         try:
-            if not self._light.test_connection():
-                self._light.connect()
+            connected = await self.hass.async_add_job(self._light.test_connection)
+            if not connected: 
+                connection = await self.hass.async_add_job(self._light.connect)
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
             _LOGGER.error(error_message, self._name, err)
             return
 
-        self._light.turn_off()
+        await self.hass.async_add_job(self._light.turn_off)
         self._state = False
 
-    def update(self):
+    async def async_update(self):
         try:
-            if not self._light.test_connection():
-                self._light.connect()
+            connected = await self.hass.async_add_job(self._light.test_connection)
+            if not connected: 
+                connection = await self.hass.async_add_job(self._light.connect)
         except Exception as err:  # pylint: disable=broad-except
             error_message = 'Connection failed for magicblue %s: %s'
             _LOGGER.error(error_message, self._name, err)
             return
-        info = self._light.get_device_info()
+        info = await self.hass.async_add_job(self._light.get_device_info)
         _LOGGER.debug('light info %s', info)
         self._white_value = info['brightness']
         self._rgb = (info['r'], info['g'], info['b'])
