@@ -4,6 +4,8 @@
   entities:
     - light.kitchen_uplighter
     - light.dining_table_uplighter
+    - light.living_room_ceiling_left
+    - light.living_room_ceiling_right
 
 - platform: group
   name: Bedroom
