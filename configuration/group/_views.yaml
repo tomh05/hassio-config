@@ -7,6 +7,8 @@ default_view:
     - device_tracker.phone
     - sensor.day_phase
     - sun.sun
+    - sensor.living_room_temperature
+    - sensor.living_room_humidity
     - sensor.weather_symbol
     - group.house_controls
     - group.day_phase
