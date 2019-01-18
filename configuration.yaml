@@ -31,6 +31,8 @@ updater:
 wake_on_lan:
 
 emulated_hue:
+    exposed_domains:
+        - light
 
 # Enable Floorplan Panel
 panel_custom:

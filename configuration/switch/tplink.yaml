@@ -2,3 +2,7 @@
 - platform: tplink
   name: Living Room Speakers
   host: 192.168.1.28
+
+- platform: tplink
+  name: Heater
+  host: 192.168.1.41
