@@ -78,8 +78,14 @@
       kelvin: 2000
   - delay: '00:00:10'
   - service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 60
+  - service: light.turn_on
     entity_id: light.bedroom
     data:
       brightness_pct: 100
       kelvin: 6500
-      transition: 1800
+      transition: 900
