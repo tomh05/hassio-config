@@ -27,21 +27,8 @@
     to: 'Night'
   condition: []
   action:
-  - service: light.turn_on
-    data:
-      color_temp: 450
-      brightness_pct: 25
-      entity_id: light.bedside_window
-  - service: light.turn_on
-    data:
-      color_temp: 450
-      brightness_pct: 25
-      entity_id: light.bedside_door
-  - service: light.turn_on
-    data:
-      color_temp: 450
-      brightness_pct: 15
-      entity_id: light.bedroom_ceiling
+  - service: script.turn_on
+    entity_id: script.bedtime
 - id: '3545251949432'
   alias: Workday Morning Energise Routine
   trigger:
@@ -89,3 +76,23 @@
       brightness_pct: 100
       kelvin: 6500
       transition: 900
+- id: '3545251949409'
+  alias: Lights off during daytime
+  trigger:
+  - entity_id: sensor.day_phase
+    platform: state
+    from: Morning
+    to: Day
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.bedroom
+    data:
+      transition: 60
+  - service: light.turn_off
+    entity_id: light.living_room
+    data:
+      transition: 60
