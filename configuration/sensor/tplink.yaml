@@ -1,23 +1,22 @@
-sensor:
-  - platform: template
-    sensors:
-      heater_amps:
-        friendly_name_template: "{{ states.switch.heater.name}} Current"
-        value_template: '{{ states.switch.heater.attributes["current_a"] | float }}'
-        unit_of_measurement: 'A'
-      heater_watts:
-        friendly_name_template: "{{ states.switch.heater.name}} Current Consumption"
-        value_template: '{{ states.switch.heater.attributes["current_power_w"] | float }}'
-        unit_of_measurement: 'W'
-      heater_total_kwh:
-        friendly_name_template: "{{ states.switch.heater.name}} Total Consumption"
-        value_template: '{{ states.switch.heater.attributes["total_energy_kwh"] | float }}'
-        unit_of_measurement: 'kWh'
-      heater_volts:
-        friendly_name_template: "{{ states.switch.heater.name}} Voltage"
-        value_template: '{{ states.switch.heater.attributes["voltage"] | float }}'
-        unit_of_measurement: 'V'
-      heater_today_kwh:
-        friendly_name_template: "{{ states.switch.heater.name}} Today's Consumption"
-        value_template: '{{ states.switch.heater.attributes["today_energy_kwh"] | float }}'
-        unit_of_measurement: 'kWh'
+- platform: template
+  sensors:
+    heater_amps:
+      friendly_name_template: "{{ states.switch.heater.name}} Current"
+      value_template: '{{ states.switch.heater.attributes["current_a"] | float }}'
+      unit_of_measurement: 'A'
+    heater_watts:
+      friendly_name_template: "{{ states.switch.heater.name}} Current Consumption"
+      value_template: '{{ states.switch.heater.attributes["current_power_w"] | float }}'
+      unit_of_measurement: 'W'
+    heater_total_kwh:
+      friendly_name_template: "{{ states.switch.heater.name}} Total Consumption"
+      value_template: '{{ states.switch.heater.attributes["total_energy_kwh"] | float }}'
+      unit_of_measurement: 'kWh'
+    heater_volts:
+      friendly_name_template: "{{ states.switch.heater.name}} Voltage"
+      value_template: '{{ states.switch.heater.attributes["voltage"] | float }}'
+      unit_of_measurement: 'V'
+    heater_today_kwh:
+      friendly_name_template: "{{ states.switch.heater.name}} Today's Consumption"
+      value_template: '{{ states.switch.heater.attributes["today_energy_kwh"] | float }}'
+      unit_of_measurement: 'kWh'
