@@ -56,7 +56,6 @@ history:
             - light
             - switch
             - sensor
-        domains: light
 
 logbook:
     exclude:
