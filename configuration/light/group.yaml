@@ -10,22 +10,30 @@
 
 - platform: group
   name: Uplighters
-  icon: mdi:sofa
+  icon: mdi:lightbulb
   entities:
     - light.kitchen_uplighter
     - light.dining_table_uplighter
 
 - platform: group
   name: Living Room Ceiling
-  icon: mdi:sofa
+  icon: mdi:ceiling-light
   entities:
     - light.living_room_ceiling_left
     - light.living_room_ceiling_right
 
 # Bedroom
 - platform: group
-  name: Bedside
+  name: Bedroom
   icon: mdi:hotel
+  entities:
+    - light.bedside_window
+    - light.bedside_door
+    - light.bedroom_ceiling
+
+- platform: group
+  name: Bedside
+  icon: mdi:lamp
   entities:
     - light.bedside_window
     - light.bedside_door
