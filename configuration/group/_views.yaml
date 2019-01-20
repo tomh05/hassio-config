@@ -41,6 +41,8 @@ lights:
     - sensor.living_room_light
     - sensor.top_floor_light
     - light.living_room
+    - light.uplighters
+    - light.living_room_ceiling
     - light.kitchen_uplighter
     - light.dining_table_uplighter
     - light.bedroom
