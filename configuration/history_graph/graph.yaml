@@ -1,0 +1,5 @@
+living_room_heating:
+    entities:
+      - switch.heater
+      - sensor.living_room_temperature
+
