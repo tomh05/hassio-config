@@ -1,4 +1,5 @@
 living_room_heating:
+    hours_to_show: 48
     entities:
       - switch.heater
       - sensor.living_room_temperature
