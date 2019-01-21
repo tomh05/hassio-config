@@ -7,11 +7,11 @@
   ac_mode: false
   target_temp: 17
   cold_tolerance: 0.3
-  hot_tolerance: 0.1
+  hot_tolerance: 0
   min_cycle_duration:
-      seconds: 30
+      seconds: 20
   keep_alive:
       minutes: 10
   initial_operation_mode: "off"
-  away_temp: 16
+  away_temp: 15
   precision: 0.1
