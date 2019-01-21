@@ -17,6 +17,7 @@ default_view:
     - group.media_players_active
     - group.system_links
     - history_graph.living_room_heating
+    - climate.living_room
 
 living_room:
   name: Living Room
