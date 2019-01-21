@@ -1,0 +1,17 @@
+- platform: generic_thermostat
+  name: Living Room
+  heater: switch.heater
+  target_sensor: sensor.living_room_temperature
+  min_temp: 10
+  max_temp: 22
+  ac_mode: false
+  target_temp: 17
+  cold_tolerance: 0.3
+  hot_tolerance: 0.1
+  min_cycle_duration:
+      seconds: 30
+  keep_alive:
+      minutes: 10
+  initial_operation_mode: "off"
+  away_temp: 16
+  precision: 0.1
