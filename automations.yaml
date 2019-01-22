@@ -107,7 +107,8 @@
   action:
   - service: climate.set_temperature
     entity_id: climate.living_room
-    temperature: 15
+    data:
+        temperature: 15
 - id: '2545211239409'
   alias: Switch on heating in morning
   trigger:
@@ -118,4 +119,5 @@
   action:
   - service: climate.set_temperature
     entity_id: climate.living_room
-    temperature: 19
+    data:
+        temperature: 19
