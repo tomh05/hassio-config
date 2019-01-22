@@ -96,3 +96,25 @@
     entity_id: light.living_room
     data:
       transition: 60
+- id: '2545251249409'
+  alias: Switch off heating at night
+  trigger:
+  - entity_id: sensor.day_phase
+    platform: state
+    from: Evening
+    to: Night
+  action:
+  - service: climate.set_temperature
+    entity_id: climate.living_room
+    temperature: 15
+- id: '2545211239409'
+  alias: Switch on heating in morning
+  trigger:
+  - entity_id: sensor.day_phase
+    platform: state
+    from: Night
+    to: Morning
+  action:
+  - service: climate.set_temperature
+    entity_id: climate.living_room
+    temperature: 19
