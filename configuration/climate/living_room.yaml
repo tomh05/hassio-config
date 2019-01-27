@@ -12,6 +12,6 @@
       seconds: 20
   keep_alive:
       minutes: 10
-  initial_operation_mode: "Heat"
+  initial_operation_mode: "auto"
   away_temp: 15
   precision: 0.1
