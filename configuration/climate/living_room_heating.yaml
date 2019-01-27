@@ -1,5 +1,5 @@
 - platform: generic_thermostat
-  name: Living Room Heating
+  name: Living Room
   heater: switch.heater
   target_sensor: sensor.living_room_temperature
   min_temp: 10
