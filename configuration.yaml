@@ -37,6 +37,17 @@ api:
 
 alexa:
   smart_home:
+      filter:
+          include_domains:
+              - light
+              - climate
+              - switch
+          exclude_entities:
+              - automation.system_travis_build_passed
+      entity_config:
+          light.living_room:
+              name: Living Room Lights
+              display_categories: LIGHT
 
 # Enable Floorplan Panel
 panel_custom:
