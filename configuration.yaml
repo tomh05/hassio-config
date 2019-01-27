@@ -37,6 +37,11 @@ emulated_hue:
     exposed_domains:
         - light
 
+api:
+
+alexa:
+  smart_home:
+
 # Enable Floorplan Panel
 panel_custom:
     - name: floorplan
