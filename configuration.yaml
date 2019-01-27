@@ -33,10 +33,6 @@ updater:
     include_used_components: true
 wake_on_lan:
 
-emulated_hue:
-    exposed_domains:
-        - light
-
 api:
 
 alexa:
