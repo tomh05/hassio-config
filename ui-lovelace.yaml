@@ -1,6 +1,7 @@
 title: Home
 views:
     - title: Main
+      icon: mdi:home
       cards:
         - type: thermostat
           entity: climate.living_room
@@ -20,12 +21,19 @@ views:
           title: "Presence"
           entities:
             - binary_sensor.pir_sensor
+        - type: media-control
+          entity: media_player.spotify
     - title: Living Room
+      icon: mdi:sofa
       cards:
-        - type: light
-          entity: light.living_room_uplighters
-        - type: light
-          entity: light.living_room_ceiling
+        - type: horizontal-stack
+          cards:
+            - type: light
+              entity: light.living_room_uplighters
+              name: Uplighters
+            - type: light
+              entity: light.living_room_ceiling
+              name: Ceiling
         - type: entities
           title: Lights
           entities:
@@ -41,31 +49,58 @@ views:
             - sensor.living_room_temperature
         - type: thermostat
           entity: climate.living_room
+        - type: media-control
+          entity: media_player.tv
+        - type: media-control
+          entity: media_player.chromecast
+          
+    - title: Bedroom
+      icon: mdi:hotel
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: light
+              entity: light.bedside
+              name: Bedside
+            - type: light
+              entity: light.bedroom_ceiling
+              name: Ceiling
+        - type: entities
+          title: Lights
+          entities:
+            - light.bedroom_ceiling
+            - light.bedside_door
+            - light.bedside_window
+          
     - title: System
+      icon: mdi:wrench
       cards:
         - type: sensor
           entity: sensor.travis_build_status
         - type: sensor
-          entity: sensor.sun
-        - type: sensor
           entity: sensor.day_phase
         - type: sensor
           entity: sensor.disk_use_percent
-        - type: weblink
-          name: Router
-          icon: mdi:ethernet
-          url: http://192.168.1.1
-        - type: weblink
-          name: Travis
-          icon: mdi:worker
-          url: https://travis-ci.com/tomh05/hassio-config
-        - type: weblink
-          name: Node Red
-          icon: mdi:sitemap
-          url: https://tomh05hassio.duckdns.org:1880/
-        - type: weblink
-          name: Pi Hole
-          icon: mdi:block-helper
-          url: http://hassio.local
+        - type: entities
+          title: Links
+          show_header_toggle: false
+          entities:
+            - type: weblink
+              name: Router
+              icon: mdi:ethernet
+              url: http://192.168.1.1
+            - type: weblink
+              name: Travis
+              icon: mdi:worker
+              url: https://travis-ci.com/tomh05/hassio-config
+            - type: weblink
+              name: Node Red
+              icon: mdi:sitemap
+              url: https://tomh05hassio.duckdns.org:1880/
+            - type: weblink
+              name: Pi Hole
+              icon: mdi:block-helper
+              url: http://hassio.local
+
 
 
