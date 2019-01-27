@@ -22,10 +22,12 @@ views:
             - binary_sensor.pir_sensor
     - title: Living Room
       cards:
-        - type: thermostat
-          entity: climate.living_room
+        - type: light
+          entity: light.living_room_uplighters
+        - type: light
+          entity: light.living_room_ceiling
         - type: entities
-          title: Rooms
+          title: Lights
           entities:
             - light.living_room_ceiling_left
             - light.living_room_ceiling_right
@@ -35,4 +37,33 @@ views:
           title: "Living Room"
           entities:
             - sensor.living_room_temperature
-    
+        - type: thermostat
+          entity: climate.living_room
+    - title: System
+      cards:
+        - type: sensor
+          entity: sensor.travis_build_status
+        - type: sensor
+          entity: sensor.sun
+        - type: sensor
+          entity: sensor.day_phase
+        - type: sensor
+          entity: sensor.disk_use_percent
+        - type: weblink
+          name: Router
+          icon: mdi:ethernet
+          url: http://192.168.1.1
+        - type: weblink
+          name: Travis
+          icon: mdi:worker
+          url: https://travis-ci.com/tomh05/hassio-config
+        - type: weblink
+          name: Node Red
+          icon: mdi:sitemap
+          url: https://tomh05hassio.duckdns.org:1880/
+        - type: weblink
+          name: Pi Hole
+          icon: mdi:block-helper
+          url: http://hassio.local
+
+

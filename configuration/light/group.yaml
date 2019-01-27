@@ -9,7 +9,7 @@
     - light.living_room_ceiling_right
 
 - platform: group
-  name: Uplighters
+  name: Living Room Uplighters
   icon: mdi:lightbulb
   entities:
     - light.kitchen_uplighter
