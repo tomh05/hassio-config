@@ -1,0 +1,38 @@
+title: Home
+views:
+    - title: Main
+      cards:
+        - type: thermostat
+          entity: climate.living_room
+        - type: entities
+          title: Rooms
+          entities:
+            - light.living_room
+            - entity: light.bedroom
+              name: Main Bedroom
+        - type: sensor
+          entity: sensor.day_phase
+        - type: history-graph
+          title: "Living Room"
+          entities:
+            - sensor.living_room_temperature
+        - type: history-graph
+          title: "Presence"
+          entities:
+            - binary_sensor.pir_sensor
+    - title: Living Room
+      cards:
+        - type: thermostat
+          entity: climate.living_room
+        - type: entities
+          title: Rooms
+          entities:
+            - light.living_room_ceiling_left
+            - light.living_room_ceiling_right
+            - light.kitchen_uplighter
+            - light.dining_table_uplighter
+        - type: history-graph
+          title: "Living Room"
+          entities:
+            - sensor.living_room_temperature
+    
