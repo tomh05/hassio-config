@@ -120,4 +120,4 @@
   - service: climate.set_temperature
     entity_id: climate.living_room
     data:
-        temperature: 19
+        temperature: 20
