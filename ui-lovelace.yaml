@@ -21,6 +21,8 @@ views:
           title: "Presence"
           entities:
             - binary_sensor.pir_sensor
+            - binary_sensor.motion_detected
+            - binary_sensor.shouldheat
         - type: media-control
           entity: media_player.spotify
     - title: Living Room
