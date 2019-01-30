@@ -15,9 +15,9 @@
       value_template: "{{is_state('binary_sensor.pir_sensor', 'on')}}"
 
 - platform: bayesian
-    name: 'ShouldHeat'
-    prior: 0.5
-    observations:
+  name: 'ShouldHeat'
+  prior: 0.5
+  observations:
       - entity_id: 'binary_sensor.motion_detected'
         prob_given_true: 0.99
         prob_given_false: 0.2
