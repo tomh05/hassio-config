@@ -1,0 +1,35 @@
+- platform: template
+  sensors:
+    # True if temperature is too low ( < 15 deg C)
+    cold_outside:
+      entity_id:
+        - weather.dark_sky
+      value_template: "{{states.weather.dark_sky.attributes.temperature|float < 10}}" 
+ 
+    motion_detected:
+      friendly_name: Motion detected
+      delay_off:
+        minutes: 10
+      entity_id:
+        - binary_sensor.pir_sensor
+      value_template: "{{is_state('binary_sensor.pir_sensor', 'on')}}"
+
+- platform: bayesian
+    name: 'ShouldHeat'
+    prior: 0.5
+    observations:
+      - entity_id: 'binary_sensor.motion_detected'
+        prob_given_true: 0.99
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'on'
+      - entity_id: sensor.day_phase
+        prob_given_true: 0.1
+        prob_given_false: 0.5
+        platform: 'state'
+        to_state: 'Night'
+      - entity_id: binary_sensor.cold_outside
+        prob_given_true: 0.7
+        prob_given_false: 0.5
+        platform: 'state'
+        to_state: 'on'
