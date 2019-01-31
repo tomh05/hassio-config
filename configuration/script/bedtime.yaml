@@ -13,6 +13,10 @@ bedtime:
     data:
         entity_id: media_player.spotify
         source: New Echo Dot
+  - service: media_player.volume_set
+    data:
+        entity_id: media_player.spotify
+        volume_level: 0.2
   - service: media_player.play_media
     data:
         entity_id: media_player.spotify
