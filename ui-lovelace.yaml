@@ -14,17 +14,19 @@ views:
         - type: sensor
           entity: sensor.day_phase
         - type: history-graph
-          title: "Living Room"
-          entities:
-            - sensor.living_room_temperature
-        - type: history-graph
           title: "Presence"
           entities:
             - binary_sensor.pir_sensor
             - binary_sensor.motion_detected
-            - binary_sensor.shouldheat
+            - binary_sensor.should_heat
         - type: media-control
           entity: media_player.spotify
+        - type: entities
+          title: "Should Heat"
+          show_header_toggle: false
+          entities:
+              - binary_sensor.should_heat
+
     - title: Living Room
       icon: mdi:sofa
       cards:
