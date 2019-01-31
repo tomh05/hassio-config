@@ -75,6 +75,12 @@ views:
             - light.bedroom_ceiling
             - light.bedside_door
             - light.bedside_window
+        - type: entities
+          entities:
+            - entity: scene.bedtime
+              icon: mdi:power-sleep
+
+
           
     - title: System
       icon: mdi:wrench
