@@ -12,7 +12,7 @@ bedtime:
   - service: media_player.select_source
     data:
         entity_id: media_player.spotify
-        shource: New Echo Dot
+        source: New Echo Dot
   - service: media_player.play_media
     data:
         entity_id: media_player.spotify
