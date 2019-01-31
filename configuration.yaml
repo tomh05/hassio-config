@@ -86,22 +86,6 @@ logger:
         homeassistant.media_player.spotify: info
         homeassistant.components.device_tracker.nmap_tracker: warn
 
-# external links
-weblink:
-    entities:
-        - name: Router
-          icon: mdi:ethernet
-          url: http://192.168.0.1
-        - name: Travis
-          icon: mdi:worker
-          url: https://travis-ci.com/tomh05/hassio-config
-        - name: Node Red
-          icon: mdi:sitemap
-          url: https://tomh05hassio.duckdns.org:1880/
-        - name: Pi Hole
-          icon: mdi:block-helper
-          url: http://hassio.local
-
 # Text To Speech
 tts:
     platform: amazon_polly
