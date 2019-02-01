@@ -136,6 +136,11 @@ views:
                 style:
                     top: 33%
                     left: 76%
+              - type: state-label
+                entity: sensor.bedroom_temperature
+                style:
+                    top: 10%
+                    left: 85%
               - type: state-icon
                 tap_action:
                     action: toggle
@@ -148,8 +153,22 @@ views:
                     action: toggle
                 entity: light.dining_table_uplighter
                 style:
-                    top: 32%
+                    top: 40%
                     left: 5%
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                entity: light.living_room_ceiling_left
+                style:
+                    top: 56%
+                    left: 20%
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                entity: light.living_room_ceiling_right
+                style:
+                    top: 26%
+                    left: 20%
               - type: state-label
                 entity: sensor.living_room_temperature
                 style:
