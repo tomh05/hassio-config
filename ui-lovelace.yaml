@@ -79,9 +79,6 @@ views:
           entities:
             - entity: scene.bedtime
               icon: mdi:power-sleep
-
-
-          
     - title: System
       icon: mdi:wrench
       cards:
@@ -111,7 +108,7 @@ views:
               name: Pi Hole
               icon: mdi:block-helper
               url: http://hassio.local
-    - title: Map
+    - title: Main
       icon: mdi:map
       cards:
         - type: picture-elements
@@ -157,6 +154,3 @@ views:
                 style:
                     top: 32%
                     left: 32%
-
-
-
