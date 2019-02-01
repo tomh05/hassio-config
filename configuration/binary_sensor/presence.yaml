@@ -19,22 +19,30 @@
   prior: 0.4
   observations:
       - entity_id: 'binary_sensor.motion_detected'
+        # probability of motion sensor being triggered given we should have heating on
         prob_given_true: 0.6
-        prob_given_false: 0.001
+        # probability of motion sensor being triggered given we shouldn't have heating on
+        prob_given_false: 0.1
         platform: 'state'
         to_state: 'on'
       - entity_id: sensor.day_phase
+        # probability of it being night given we should have heating on
         prob_given_true: 0.1
-        prob_given_false: 0.8
+        # probability of it being night given we shouldn't have heating on
+        prob_given_false: 0.5
         platform: 'state'
         to_state: 'Night'
       - entity_id: sensor.day_phase
-        prob_given_true: 0.1
+        # probability of it being evening, given we want heating on
+        prob_given_true: 0.15
+        # probability of it being evening, given we don't want heating on
         prob_given_false: 0.05
         platform: 'state'
         to_state: 'Evening'
       - entity_id: binary_sensor.cold_outside
+        # probability of it being cold outside, given we want heating on
         prob_given_true: 0.7
-        prob_given_false: 0.5
+        # probability of it being cold outside, given we don't want heating on
+        prob_given_false: 0.3
         platform: 'state'
         to_state: 'on'
