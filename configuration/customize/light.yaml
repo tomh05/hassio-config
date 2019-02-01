@@ -13,6 +13,12 @@ light.bedside_window:
 light.living_room:
   icon: mdi:sofa
 
+light.living_room_ceiling_left:
+  icon: mdi:ceiling-light
+
+light.living_room_ceiling_right:
+  icon: mdi:ceiling-light
+
 light.spare_bedroom:
   icon: mdi:bed-empty
 

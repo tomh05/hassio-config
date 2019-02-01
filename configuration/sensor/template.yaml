@@ -20,3 +20,8 @@
             | list 
             | count
         }}
+    outside_temperature:
+      friendly_name: "Outside Temperature"
+      unit_of_measurement: "degrees"
+      value_template: >
+        {{ states.weather.dark_sky.attributes.temperature }}
