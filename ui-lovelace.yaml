@@ -2,6 +2,9 @@ title: Home
 views:
     - title: Main
       icon: mdi:home
+      path: home
+      badges:
+        - sensor.day_phase
       cards:
         - type: thermostat
           entity: climate.living_room
@@ -28,6 +31,7 @@ views:
               - binary_sensor.should_heat
 
     - title: Living Room
+      path: living_room
       icon: mdi:sofa
       cards:
         - type: horizontal-stack
@@ -59,6 +63,7 @@ views:
           entity: media_player.chromecast
           
     - title: Bedroom
+      path: bedroom
       icon: mdi:hotel
       cards:
         - type: horizontal-stack
@@ -85,6 +90,7 @@ views:
             - sensor.bedroom_temperature
 
     - title: System
+      path: system
       icon: mdi:wrench
       cards:
         - type: sensor
@@ -113,9 +119,10 @@ views:
               name: Pi Hole
               icon: mdi:block-helper
               url: http://hassio.local
-    - title: Main
-      panel: true
-      icon: mdi:map
+    - title: Plan
+      path: plan
+      panel: false
+      icon: mdi:floor-plan
       cards:
         - type: picture-elements
           image: /local/floorplan.png
