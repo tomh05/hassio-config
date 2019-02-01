@@ -111,6 +111,28 @@ views:
               name: Pi Hole
               icon: mdi:block-helper
               url: http://hassio.local
+        - type: picture-elements
+          image: /local/floorplan.png
+          elements:
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                    entity: light.bedroom_ceiling
+                style:
+                    top: 47%
+                    left: 42%
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                    entity: light.kitchen_uplighter
+                style:
+                    top: 30%
+                    left: 15%
+              - type: state-label
+                entity: sensor.living_room_temperature
+                style:
+                    top: 82%
+                    left: 79%
 
 
 
