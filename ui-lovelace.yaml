@@ -79,6 +79,11 @@ views:
           entities:
             - entity: scene.bedtime
               icon: mdi:power-sleep
+        - type: history-graph
+          title: "Bedroom Temperature"
+          entities:
+            - sensor.bedroom_temperature
+
     - title: System
       icon: mdi:wrench
       cards:
