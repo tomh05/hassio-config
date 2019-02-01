@@ -109,6 +109,7 @@ views:
               icon: mdi:block-helper
               url: http://hassio.local
     - title: Main
+      panel: true
       icon: mdi:map
       cards:
         - type: picture-elements
@@ -126,14 +127,14 @@ views:
                     action: toggle
                 entity: light.bedside_window
                 style:
-                    top: 24%
-                    left: 86%
+                    top: 33%
+                    left: 93%
               - type: state-icon
                 tap_action:
                     action: toggle
                 entity: light.bedside_door
                 style:
-                    top: 24%
+                    top: 33%
                     left: 76%
               - type: state-icon
                 tap_action:
@@ -147,10 +148,10 @@ views:
                     action: toggle
                 entity: light.dining_table_uplighter
                 style:
-                    top: 16%
-                    left: 16%
+                    top: 32%
+                    left: 5%
               - type: state-label
                 entity: sensor.living_room_temperature
                 style:
                     top: 32%
-                    left: 32%
+                    left: 35%
