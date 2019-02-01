@@ -117,14 +117,14 @@ views:
               - type: state-icon
                 tap_action:
                     action: toggle
-                    entity: light.bedroom_ceiling
+                entity: light.bedroom_ceiling
                 style:
                     top: 47%
                     left: 42%
               - type: state-icon
                 tap_action:
                     action: toggle
-                    entity: light.kitchen_uplighter
+                entity: light.kitchen_uplighter
                 style:
                     top: 30%
                     left: 15%
