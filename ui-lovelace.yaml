@@ -111,7 +111,7 @@ views:
               name: Pi Hole
               icon: mdi:block-helper
               url: http://hassio.local
-- title: Map
+    - title: Map
       icon: mdi:map
       cards:
         - type: picture-elements
