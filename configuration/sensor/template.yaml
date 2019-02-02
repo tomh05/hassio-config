@@ -4,9 +4,8 @@
       friendly_name: "Lights On"
       unit_of_measurement: "Count"
       value_template: >
-        {{ states.light
+        {{ states.group.all_lights
             | selectattr('state', 'eq', 'on')
-            | rejectattr('attributes.is_hue_group')
             | list 
             | count
         }}
@@ -14,9 +13,8 @@
       friendly_name: "Rooms On"
       unit_of_measurement: "Count"
       value_template: >
-        {{ states.light
+        {{ states.group.meta_switches
             | selectattr('state', 'eq', 'on')
-            | selectattr('attributes.is_hue_group')
             | list 
             | count
         }}
