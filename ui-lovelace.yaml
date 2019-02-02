@@ -186,3 +186,8 @@ views:
                 style:
                     top: 32%
                     left: 35%
+              - type: state-label
+                entity: sensor.outside_temperature
+                style:
+                    top: 90%
+                    left: 25%

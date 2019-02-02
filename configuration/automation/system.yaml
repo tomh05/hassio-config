@@ -6,7 +6,7 @@
     - service: notify.notify
       data_template:
         message: >
-          Home Assistant back online! {{ "\uD83E\uDD29" }}
+          Home Assistant back online!
     - delay:
         seconds: 30
     - service: hassio.addon_stop
@@ -21,4 +21,4 @@
     - service: notify.notify
       data_template:
         message: >
-          Home Assistant is going down! {{ "\uD83D\uDE34" }}
+          Home Assistant is going down!
