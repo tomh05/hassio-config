@@ -55,6 +55,8 @@ views:
           title: "Living Room"
           entities:
             - sensor.living_room_temperature
+            - switch.heater
+
         - type: thermostat
           entity: climate.living_room
         - type: media-control
