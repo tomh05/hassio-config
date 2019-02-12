@@ -49,14 +49,6 @@ alexa:
               name: Living Room Lights
               display_categories: LIGHT
 
-# Enable Floorplan Panel
-panel_custom:
-    - name: floorplan
-      sidebar_title: Floorplan
-      sidebar_icon: mdi:home
-      url_path: floorplan
-      config: !include floorplan.yaml
-
 # History
 recorder:
     purge_interval: 1
