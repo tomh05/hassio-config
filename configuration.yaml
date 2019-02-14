@@ -42,6 +42,8 @@ alexa:
               - light
               - climate
               - switch
+          include_entities:
+              - script.goodnight
           exclude_entities:
               - automation.system_travis_build_passed
       entity_config:
