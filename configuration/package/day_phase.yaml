@@ -32,6 +32,8 @@ day_phase:
         day_phase_real:
           friendly_name: "Day Phase Real"
           # Morning : 8-9am weekdays
+          # Day : 9am till sunset
+          # Evening : sunset till 22:30
           # currently ignoring states.sun.sun.state == "above_horizon"
           value_template: >
             {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
@@ -40,15 +42,11 @@ day_phase:
             %}
                 Morning
             {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=19).replace(minute=0).replace(second=0) and
-                    now().isoweekday() <= 5 and 
-                    states.input_boolean.holiday_mode.state == "off"
-                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=19).replace(minute=0).replace(second=0)
+                    states.sun.sun.state == "above_horizon"
             %}
                 Day
-            {% elif now() < now().replace(hour=22).replace(minute=30).replace(second=0) and
-                    now() > now().replace(hour=12).replace(minute=0).replace(second=0) 
+            {% elif now() > now().replace(hour=12).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=22).replace(minute=30).replace(second=0) 
             %}
                 Evening
             {% else %}
