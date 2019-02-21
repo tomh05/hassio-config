@@ -109,6 +109,19 @@
     entity_id: climate.living_room
     data:
         temperature: 15
+- id: '2545251149209'
+  alias: Switch on hallway in evening
+  trigger:
+  - entity_id: sensor.day_phase
+    platform: state
+    from: Day
+    to: Evening
+  action:
+  - service: light.turn_on
+    entity_id:
+    - light.hallway
+    data:
+        brightness: 100
 - id: '2545211239409'
   alias: Switch on heating in morning
   trigger:
