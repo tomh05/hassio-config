@@ -43,6 +43,7 @@ alexa:
               - climate
               - switch
           include_entities:
+              - script.bedtime
               - script.goodnight
           exclude_entities:
               - automation.system_travis_build_passed
