@@ -50,4 +50,4 @@
   icon: mdi:shoe-formal
   entities:
     - light.hallway_entrance
-    - light.hallway_corridoor
+    - light.hallway_back
