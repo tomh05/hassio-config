@@ -9,12 +9,12 @@
   version: 10
 
 - platform: magicbluelight
-  name: Hallway Entrance
+  name: Not Used 1
   address: f8:1d:78:60:8C:35
   version: 10
 
 - platform: magicbluelight
-  name: Hallway Corridoor
+  name: Not Used 2
   address: f8:1d:78:60:c6:25
   version: 10
 
