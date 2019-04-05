@@ -14,6 +14,7 @@ views:
             - light.living_room
             - entity: light.bedroom
               name: Main Bedroom
+            - light.hallway
         - type: sensor
           entity: sensor.day_phase
         - type: history-graph
