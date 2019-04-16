@@ -36,16 +36,16 @@ day_phase:
           # Evening : sunset till 22:30
           # currently ignoring states.sun.sun.state == "above_horizon"
           value_template: >
-            {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
+            {% if   now() > now().replace(hour=8).replace(minute=30).replace(second=0) and
                     now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
                     now().isoweekday() <= 5 
             %}
                 Morning
             {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    states.sun.sun.state == "above_horizon"
+                    now() < now().replace(hour=18).replace(minute=30).replace(second=0) 
             %}
                 Day
-            {% elif now() > now().replace(hour=12).replace(minute=0).replace(second=0) and
+            {% elif now() > now().replace(hour=18).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=22).replace(minute=30).replace(second=0) 
             %}
                 Evening
