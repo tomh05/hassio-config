@@ -3,7 +3,7 @@
   trigger:
   - entity_id: sensor.day_phase
     platform: state
-    to: Nightf
+    to: Night
   condition: []
   action:
   - service: light.turn_on
@@ -24,7 +24,7 @@
   trigger:
   - entity_id: sensor.day_phase
     platform: state
-    to: 'Night'
+    to: Night
   condition: []
   action:
   - service: script.turn_on
