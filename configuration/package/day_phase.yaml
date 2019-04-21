@@ -42,7 +42,7 @@ day_phase:
             %}
                 Morning
             {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=18).replace(minute=30).replace(second=0) 
+                    now() < now().replace(hour=18).replace(minute=0).replace(second=0) 
             %}
                 Day
             {% elif now() > now().replace(hour=18).replace(minute=0).replace(second=0) and
