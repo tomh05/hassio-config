@@ -103,6 +103,17 @@ views:
         - type: sensor
           entity: sensor.disk_use_percent
         - type: entities
+          title: Overrides
+          entities:
+            - input_boolean.day_phase_day
+            - input_boolean.day_phase_evening
+            - input_boolean.day_phase_morning
+            - input_boolean.day_phase_night
+            - input_boolean.holiday_mode
+            - input_boolean.away_mode
+            - input_boolean.night_mode
+            - input_boolean.cinema_mode
+        - type: entities
           title: Links
           show_header_toggle: false
           entities:
