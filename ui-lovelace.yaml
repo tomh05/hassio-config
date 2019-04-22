@@ -5,6 +5,7 @@ views:
       path: home
       badges:
         - sensor.day_phase
+        - device_tracker.tom_th
       cards:
         - type: thermostat
           entity: climate.living_room
