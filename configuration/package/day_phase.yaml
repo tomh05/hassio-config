@@ -32,25 +32,6 @@ day_phase:
         day_phase_real:
           friendly_name: "Day Phase Real"
           value_template: >
-            {% if   now() > now().replace(hour=8).replace(minute=30).replace(second=0) and
-                    now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
-                    now().isoweekday() <= 5 
-            %}
-                Morning
-            {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=18).replace(minute=0).replace(second=0) 
-            %}
-                Day
-            {% elif now() > now().replace(hour=18).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=22).replace(minute=30).replace(second=0) 
-            %}
-                Evening
-            {% else %}
-                Night
-            {% endif %}
-        day_phase_real_debug:
-          friendly_name: "Day Phase Real debug"
-          value_template: >
             {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
                     now().isoweekday() <= 5 
