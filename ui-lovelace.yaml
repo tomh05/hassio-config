@@ -212,11 +212,11 @@ views:
                 entity: light.hallway_entrance
                 style:
                     top: 80%
-                    left: 55%
+                    left: 53%
               - type: state-icon
                 tap_action:
                     action: toggle
                 entity: light.hallway_back
                 style:
-                    top: 35%
-                    left: 60%
+                    top: 42%
+                    left: 59%
