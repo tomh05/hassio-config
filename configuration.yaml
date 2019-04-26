@@ -138,6 +138,10 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://hassio.local:3218
+  terminal:
+    title: Terminal
+    icon: mdi:console
+    url: https://hassio.local:7681
 
 # Components
 automation: !include automations.yaml
