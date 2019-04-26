@@ -34,5 +34,5 @@ light.hallway:
 light.hallway_entrance:
   icon: mdi:ceiling-light
 
-light.hallway_corridoor:
+light.hallway_back:
   icon: mdi:ceiling-light
