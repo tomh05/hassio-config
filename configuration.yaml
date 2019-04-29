@@ -133,16 +133,6 @@ notify:
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: https://hassio.local:3218
-  terminal:
-    title: Terminal
-    icon: mdi:console
-    url: https://hassio.local:7681
-
 # Components
 automation: !include automations.yaml
 automation old: !include_dir_merge_list configuration/automation
