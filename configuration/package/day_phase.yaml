@@ -37,17 +37,18 @@ day_phase:
                     now().isoweekday() <= 5 
             %}
                 Morning
-            {% elif states.sun.sun.state == "above_horizon" 
-                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=19).replace(minute=0).replace(second=0) and
+            {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=15).replace(minute=0).replace(second=0) and
                     now().isoweekday() <= 5 and 
                     states.input_boolean.holiday_mode.state == "off"
                 or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=16).replace(minute=0).replace(second=0)
+                    now() < now().replace(hour=15).replace(minute=0).replace(second=0)
+                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
+                    states.sun.sun.state == "above_horizon" 
             %}
                 Day
             {% elif now() < now().replace(hour=21).replace(minute=30).replace(second=0) and
-                    now() > now().replace(hour=12).replace(minute=0).replace(second=0) 
+                    now() > now().replace(hour=12).replace(minute=0).replace(second=0)
             %}
                 Evening
             {% else %}
