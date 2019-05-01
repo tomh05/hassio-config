@@ -44,10 +44,10 @@ day_phase:
                 or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=15).replace(minute=0).replace(second=0)
                 or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    states.sun.sun.state == "above_horizon" 
+                    states.sun.sun.attributes.elevation > 2 
             %}
                 Day
-            {% elif now() < now().replace(hour=21).replace(minute=30).replace(second=0) and
+            {% elif now() < now().replace(hour=22).replace(minute=0).replace(second=0) and
                     now() > now().replace(hour=12).replace(minute=0).replace(second=0)
             %}
                 Evening
