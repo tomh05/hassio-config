@@ -11,8 +11,8 @@
       delay_off:
         minutes: 15
       entity_id:
-        - binary_sensor.pir_sensor
-      value_template: "{{is_state('binary_sensor.pir_sensor', 'on')}}"
+        - binary_sensor.living_room_motion
+      value_template: "{{is_state('binary_sensor.living_room_motion', 'on')}}"
 
 - platform: bayesian
   name: 'Should Heat'
