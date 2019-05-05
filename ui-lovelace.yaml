@@ -21,7 +21,7 @@ views:
         - type: history-graph
           title: "Presence"
           entities:
-            - binary_sensor.pir_sensor
+            - binary_sensor.motion_detected
             - binary_sensor.living_room_motion
             - binary_sensor.should_heat
         - type: media-control
