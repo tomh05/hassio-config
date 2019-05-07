@@ -60,10 +60,9 @@
     to: Day
   condition:
     condition: state
-    entity_id: 'binary_sensor.workday_sensor'
+    entity_id: 'binary_sensor.daylight'
     state: 'on'
   action:
-  - delay: '00:03:00'
   - service: light.turn_off
     entity_id: light.bedroom
     data:
