@@ -15,10 +15,6 @@
     platform: state
     from: Night
     to: Morning
-  condition:
-    condition: state
-    entity_id: 'binary_sensor.workday_sensor'
-    state: 'on'
   action:
   - service: light.turn_on
     entity_id: light.bedroom_ceiling
