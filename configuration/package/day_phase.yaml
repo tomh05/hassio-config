@@ -38,41 +38,11 @@ day_phase:
             %}
                 Morning
             {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=15).replace(minute=0).replace(second=0) and
-                    now().isoweekday() <= 5 and 
-                    states.input_boolean.holiday_mode.state == "off"
-                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=15).replace(minute=0).replace(second=0)
-                or  now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
-                    states.sun.sun.attributes.elevation > 2 
+                    now() < now().replace(hour=18).replace(minute=0).replace(second=0)
             %}
                 Day
-            {% elif now() < now().replace(hour=22).replace(minute=0).replace(second=0) and
-                    now() > now().replace(hour=12).replace(minute=0).replace(second=0)
-            %}
-                Evening
-            {% else %}
-                Night
-            {% endif %}
-        day_phase_original:
-          friendly_name: "Day Phase Original"
-          value_template: >
-            {% if   now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=8).replace(minute=0).replace(second=0) and 
-                    now().isoweekday() <= 5 
-            %}
-                Morning
-            {% elif states.sun.sun.attributes.elevation > 2 
-                or  now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=19).replace(minute=0).replace(second=0) and
-                    now().isoweekday() <= 5 and 
-                    states.input_boolean.holiday_mode.state == "off"
-                or  now() > now().replace(hour=6).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=16).replace(minute=0).replace(second=0)
-            %}
-                Day
-            {% elif now() < now().replace(hour=22).replace(minute=0).replace(second=0) and
-                    now() > now().replace(hour=12).replace(minute=0).replace(second=0) 
+            {% elif now() > now().replace(hour=18).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=22).replace(minute=0).replace(second=0)
             %}
                 Evening
             {% else %}
