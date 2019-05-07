@@ -122,3 +122,21 @@
   action:
   - event: ARRIVED_AT_WORK
     event_data: {}
+- id: '1557260814256'
+  alias: Leave Work Alarm
+  trigger:
+  - at: 09:30:00
+    platform: time
+  condition:
+  - condition: zone
+    entity_id: device_tracker.tom_th
+    zone: zone.home
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.living_room
+      flash: long
+    
