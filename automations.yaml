@@ -9,7 +9,7 @@
   - service: script.turn_on
     entity_id: script.bedtime
 - id: '3545251949432'
-  alias: Workday Morning: Energise
+  alias: Workday Morning Energise
   trigger:
   - entity_id: sensor.day_phase
     platform: state
