@@ -134,3 +134,17 @@
     entity_id: climate.living_room
     data:
         temperature: 20
+- id: '1557251710350'
+  alias: Arrive at work
+  trigger:
+  - platform: zone
+    entity_id: device_tracker.tom_th
+    zone: zone.work
+    event: enter  # or "leave"
+  condition:
+  - after: '07:00:00'
+    before: '11:00:00'
+    condition: time
+  action:
+  - event: ARRIVED_AT_WORK
+    event_data: {}
