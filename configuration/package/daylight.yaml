@@ -1,8 +1,0 @@
-daylight:
-  sensor:
-    - platform: template
-      sensors:
-        daylight:
-          friendly_name: "Daylight"
-          value_template: >
-                {{ states.sun.sun.attributes.elevation > 2  }}
