@@ -34,7 +34,7 @@ day_phase:
           value_template: >
             {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
-                    binary_sensor.workday_sensor
+                    states.binary_sensor.workday_sensor.state == "on"
             %}
                 Morning
             {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
