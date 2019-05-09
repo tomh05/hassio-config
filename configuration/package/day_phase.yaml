@@ -31,7 +31,7 @@ day_phase:
             {% endif %}
         day_phase_real:
           friendly_name: "Day Phase Real"
-          entity_id: sensor.time
+          entity_id: sensor.date_time
           value_template: >
             {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
