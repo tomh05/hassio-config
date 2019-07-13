@@ -1,7 +1,6 @@
 # Living Room
 - platform: group
   name: Living Room
-  icon: mdi:sofa
   entities:
     - light.kitchen_uplighter
     - light.dining_table_uplighter
@@ -10,14 +9,12 @@
 
 - platform: group
   name: Living Room Uplighters
-  icon: mdi:lightbulb
   entities:
     - light.kitchen_uplighter
     - light.dining_table_uplighter
 
 - platform: group
   name: Living Room Ceiling
-  icon: mdi:ceiling-light
   entities:
     - light.living_room_ceiling_left
     - light.living_room_ceiling_right
@@ -25,7 +22,6 @@
 # Bedroom
 - platform: group
   name: Bedroom
-  icon: mdi:hotel
   entities:
     - light.bedside_window
     - light.bedside_door
@@ -33,21 +29,18 @@
 
 - platform: group
   name: Bedside
-  icon: mdi:lamp
   entities:
     - light.bedside_window
     - light.bedside_door
 
 - platform: group
   name: Spare Bedroom
-  icon: mdi:hotel
   entities:
     - light.spare_bedroom_ceiling
     - light.spare_bedroom_bedside
 
 - platform: group
   name: Hallway
-  icon: mdi:shoe-formal
   entities:
     - light.hallway_entrance
     - light.hallway_back
