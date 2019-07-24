@@ -6,3 +6,7 @@
 - platform: tplink
   name: Heater
   host: 192.168.1.41
+
+- platform: tplink
+  name: Fish Tank 
+  host: 192.168.1.30
