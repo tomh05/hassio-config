@@ -142,6 +142,10 @@ notify:
     name: notify
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
+  - platform: webostv
+    host: 192.168.1.25
+    name: livingroom_tv
+    filename: webostv.conf
 
 # Components
 automation: !include automations.yaml
