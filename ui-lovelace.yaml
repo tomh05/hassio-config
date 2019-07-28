@@ -9,6 +9,11 @@ views:
       cards:
         - type: thermostat
           entity: climate.living_room
+        - type: picture-glance
+          title: Fish Tank
+          entities:
+            - switch.fish_tank
+          camera_image: camera.fish_tank
         - type: entities
           title: Rooms
           entities:
