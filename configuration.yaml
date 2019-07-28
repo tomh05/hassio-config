@@ -150,6 +150,8 @@ tplink:
     - host: 192.168.1.41
 
 # Webcam
+ffmpeg:
+
 camera: 
   - platform: ffmpeg
     input: /dev/video0
