@@ -33,14 +33,14 @@ updater:
     include_used_components: true
 wake_on_lan:
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret influx_user
-  password: !secret influx_pass
-  max_retries: 3
-  default_measurement: state
+#influxdb:
+#  host: a0d7b954-influxdb
+#  port: 8086
+#  database: homeassistant
+#  username: !secret influx_user
+#  password: !secret influx_pass
+#  max_retries: 3
+#  default_measurement: state
 
 api:
 
