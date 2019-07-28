@@ -149,6 +149,11 @@ tplink:
     - host: 192.168.1.30
     - host: 192.168.1.41
 
+# Webcam
+camera: 
+  - platform: ffmpeg
+    input: /dev/video0
+
 # Components
 automation: !include automations.yaml
 automation old: !include_dir_merge_list configuration/automation
