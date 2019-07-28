@@ -155,6 +155,7 @@ ffmpeg:
 camera: 
   - platform: ffmpeg
     input: /dev/video0
+    name: fish_tank
 
 # Components
 automation: !include automations.yaml
