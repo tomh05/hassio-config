@@ -142,7 +142,7 @@
 - id: '1557233314252'
   alias: Fish Tank On in morning
   trigger:
-  - at: 09:30:00
+  - at: '09:30:00'
     platform: time
   action:
   - service: switch.turn_on
@@ -151,7 +151,7 @@
 - id: '1557233314237'
   alias: Fish Tank Off at night
   trigger:
-  - at: 20:00:00
+  - at: '20:00:00'
     platform: time
   action:
   - service: switch.turn_off
