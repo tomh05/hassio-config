@@ -20,17 +20,18 @@
   action:
   - service: script.turn_on
     entity_id: script.wakeup
+# Summer: Switch lights off during day time (provided sun is up)
 - id: '3545251949409'
   alias: Lights off during daytime
   trigger:
-  - entity_id: sensor.day_phase
     platform: state
+    entity_id: sensor.day_phase
     from: Morning
     to: Day
   condition:
-    condition: state
-    entity_id: 'binary_sensor.daylight'
-    state: 'on'
+    condition: sun
+    after: sunrise
+    after_offset: "00:30:00"
   action:
   - service: light.turn_off
     entity_id: light.bedroom
@@ -38,6 +39,32 @@
       transition: 120
   - service: light.turn_off
     entity_id: light.living_room
+    data:
+      transition: 120
+      
+# Winter: Switch lights off after sunrise (provided it is daytime)
+- id: '3545251949409'
+  alias: Lights off during daytime
+  trigger:
+  - platform: sun
+    # Possible values: sunset, sunrise
+    event: sunrise
+    # trigger 45 minutes after sunrise.
+    offset: "00:45:00"
+  - platform: state
+    entity_id: sensor.day_phase
+    from: Morning
+    to: Day
+  condition:
+    condition: state
+    entity_id: sensor.day_phase
+    state: Day
+  action:
+  - service: light.turn_off
+    entity_id: 
+      - light.bedroom
+      - light.living_room
+      - light.hallway
     data:
       transition: 120
 - id: '2545251249409'
@@ -64,7 +91,7 @@
     entity_id:
     - light.hallway
     data:
-        brightness: 100
+        brightness: 50
 - id: '2545211239409'
   alias: Switch on heating in morning
   trigger:
