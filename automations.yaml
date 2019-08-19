@@ -20,13 +20,6 @@
   action:
   - service: script.turn_on
     entity_id: script.wakeup
-  # put on the living room
-  - service: light.turn_on
-    entity_id: light.living_room
-    data:
-      brightness_pct: 100
-      kelvin: 6500
-      transition: 60
 - id: '3545251949409'
   alias: Lights off during daytime
   trigger:
