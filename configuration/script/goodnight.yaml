@@ -4,3 +4,4 @@ goodnight:
     entity_id:
     - group.all_lights
     - switch.speakers
+    - switch.fish_tank
