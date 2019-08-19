@@ -19,7 +19,7 @@
     to: Morning
   action:
   - service: script.turn_on
-  entity_id: script.wakeup
+    entity_id: script.wakeup
   # put on the living room
   - service: light.turn_on
     entity_id: light.living_room
