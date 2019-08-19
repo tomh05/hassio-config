@@ -38,3 +38,19 @@ wakeup:
       brightness_pct: 100
       kelvin: 6500
       transition: 900
+# Switch on living room and hallway lights if it is still dark outside
+  - condition:
+      condition: sun
+      before: sunrise
+      before_offset: "-00:15:00"
+  - service: light.turn_on
+    entity_id: light.hallway
+    data:
+      brightness_pct: 100
+      transition: 60
+  - service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 60
