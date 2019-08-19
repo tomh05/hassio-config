@@ -1,0 +1,40 @@
+wakeup:
+  sequence:
+  # first minute: slowly turn on ceiling light with warm light
+  - service: light.turn_on
+    entity_id: light.bedroom_ceiling
+    data:
+      brightness_pct: 1
+      kelvin: 2000
+  - service: light.turn_on
+    entity_id: light.bedroom_ceiling
+    data:
+      brightness_pct: 10
+      kelvin: 2000
+      transition: 60
+  - delay: '00:00:60'
+  - service: light.turn_on
+    entity_id: light.bedside_door
+    data:
+      brightness_pct: 1
+      kelvin: 2000
+  - service: light.turn_on
+    entity_id: light.bedside_window
+    data:
+      brightness_pct: 1
+      kelvin: 2000
+  - delay: '00:00:10'
+   # put on the living room
+  - service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 60
+  # over 15 minutes: brighten bedroom to 100% and cool white.
+  - service: light.turn_on
+    entity_id: light.bedroom
+    data:
+      brightness_pct: 100
+      kelvin: 6500
+      transition: 900
