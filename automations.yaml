@@ -1,3 +1,4 @@
+# Start the bedtime script when it becomes night.
 - id: '1545851949438'
   alias: Bedtime
   trigger:
@@ -8,6 +9,7 @@
   action:
   - service: script.turn_on
     entity_id: script.bedtime
+# Wake up routine
 - id: '3545251949432'
   alias: Workday Morning Energise
   trigger:
@@ -16,41 +18,15 @@
     from: Night
     to: Morning
   action:
-  - service: light.turn_on
-    entity_id: light.bedroom_ceiling
-    data:
-      brightness_pct: 1
-      kelvin: 2000
-  - service: light.turn_on
-    entity_id: light.bedroom_ceiling
-    data:
-      brightness_pct: 10
-      kelvin: 2000
-      transition: 60
-  - delay: '00:00:60'
-  - service: light.turn_on
-    entity_id: light.bedside_door
-    data:
-      brightness_pct: 1
-      kelvin: 2000
-  - service: light.turn_on
-    entity_id: light.bedside_window
-    data:
-      brightness_pct: 1
-      kelvin: 2000
-  - delay: '00:00:10'
+  - service: script.turn_on
+  entity_id: script.wakeup
+  # put on the living room
   - service: light.turn_on
     entity_id: light.living_room
     data:
       brightness_pct: 100
       kelvin: 6500
       transition: 60
-  - service: light.turn_on
-    entity_id: light.bedroom
-    data:
-      brightness_pct: 100
-      kelvin: 6500
-      transition: 900
 - id: '3545251949409'
   alias: Lights off during daytime
   trigger:
@@ -142,7 +118,7 @@
 - id: '1557233314252'
   alias: Fish Tank On in morning
   trigger:
-  - at: '09:30:00'
+  - at: '08:30:00'
     platform: time
   action:
   - service: switch.turn_on
@@ -151,7 +127,7 @@
 - id: '1557233314237'
   alias: Fish Tank Off at night
   trigger:
-  - at: '20:00:00'
+  - at: '22:00:00'
     platform: time
   action:
   - service: switch.turn_off
