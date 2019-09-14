@@ -3,7 +3,7 @@
   heater: switch.heater
   target_sensor: sensor.living_room_temperature
   min_temp: 10
-  max_temp: 22
+  max_temp: 23
   ac_mode: false
   target_temp: 17
   cold_tolerance: 0.3
