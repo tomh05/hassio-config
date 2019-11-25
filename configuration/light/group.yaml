@@ -1,11 +1,4 @@
 # Living Room
-- platform: group
-  name: Living Room
-  entities:
-    - light.kitchen_uplighter
-    - light.dining_table_uplighter
-    - light.living_room_ceiling_left
-    - light.living_room_ceiling_right
 
 - platform: group
   name: Living Room Uplighters
@@ -21,26 +14,7 @@
 
 # Bedroom
 - platform: group
-  name: Bedroom
-  entities:
-    - light.bedside_window
-    - light.bedside_door
-    - light.bedroom_ceiling
-
-- platform: group
   name: Bedside
   entities:
     - light.bedside_window
     - light.bedside_door
-
-- platform: group
-  name: Spare Bedroom
-  entities:
-    - light.spare_bedroom_ceiling
-    - light.spare_bedroom_lamp
-
-- platform: group
-  name: Hallway
-  entities:
-    - light.hallway_front
-    - light.hallway_back
