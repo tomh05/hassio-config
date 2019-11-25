@@ -37,10 +37,10 @@
   name: Spare Bedroom
   entities:
     - light.spare_bedroom_ceiling
-    - light.spare_bedroom_bedside
+    - light.spare_bedroom_lamp
 
 - platform: group
   name: Hallway
   entities:
-    - light.hallway_entrance
+    - light.hallway_front
     - light.hallway_back
