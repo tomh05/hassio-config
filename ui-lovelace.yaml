@@ -214,7 +214,7 @@ views:
               - type: state-icon
                 tap_action:
                     action: toggle
-                entity: light.hallway_entrance
+                entity: light.hallway_front
                 style:
                     top: 80%
                     left: 53%
@@ -225,3 +225,17 @@ views:
                 style:
                     top: 42%
                     left: 59%
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                entity: light.spare_bedroom_ceiling
+                style:
+                    top: 56%
+                    left: 83%
+              - type: state-icon
+                tap_action:
+                    action: toggle
+                entity: light.spare_bedroom_lamp
+                style:
+                    top: 44%
+                    left: 95%
