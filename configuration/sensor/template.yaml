@@ -1,23 +1,5 @@
 - platform: template
   sensors:
-    lights_on:
-      friendly_name: "Lights On"
-      unit_of_measurement: "Count"
-      value_template: >
-        {{ states.group.all_lights
-            | selectattr('state', 'eq', 'on')
-            | list 
-            | count
-        }}
-    rooms_on:
-      friendly_name: "Rooms On"
-      unit_of_measurement: "Count"
-      value_template: >
-        {{ states.group.meta_switches
-            | selectattr('state', 'eq', 'on')
-            | list 
-            | count
-        }}
     outside_temperature:
       friendly_name: "Outside Temperature"
       unit_of_measurement: "°C"
