@@ -22,7 +22,7 @@ light.living_room_ceiling_right:
 light.spare_bedroom:
   icon: mdi:bed-empty
 
-light.spare_bedroom_bedside:
+light.spare_bedroom_lamp:
   icon: mdi:lamp
 
 light.spare_bedroom_ceiling:
@@ -31,7 +31,7 @@ light.spare_bedroom_ceiling:
 light.hallway:
   icon: mdi:shoe-formal
 
-light.hallway_entrance:
+light.hallway_front:
   icon: mdi:ceiling-light
 
 light.hallway_back:
