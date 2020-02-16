@@ -101,7 +101,6 @@ logger:
     logs:
         custom_components.light.magicbluelight: debug
         magicblue.magicbluelib: debug
-        homeassistant.media_player.spotify: info
         homeassistant.components.device_tracker.nmap_tracker: warn
 
 # Text To Speech
