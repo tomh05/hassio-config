@@ -172,13 +172,6 @@ webostv:
       service: wake_on_lan.send_magic_packet
       data:
           mac: "20:3D:BD:97:4D:FC"
-  customize:
-    sources:
-          - livetv
-          - youtube
-          - iplayer
-          - netflix
-          - component
 
 
 # Components
