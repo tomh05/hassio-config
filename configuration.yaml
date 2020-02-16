@@ -178,6 +178,7 @@ webostv:
           - youtube
           - iplayer
           - netflix
+          - component
 
 
 # Components
