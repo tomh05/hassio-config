@@ -173,7 +173,7 @@ webostv:
       data:
           mac: "20:3D:BD:97:4D:FC"
   customize:
-     sources:
+      sources:
           - livetv
           - youtube
           - iplayer
