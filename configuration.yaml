@@ -184,6 +184,8 @@ spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
 
+shell_command:
+  set_tv_volume: './set_tv_volume.sh {{ states("media_player.tv.attributes.volume_level");
 
 # Components
 automation: !include automations.yaml
