@@ -153,3 +153,10 @@
   - service: switch.turn_off
     data:
       entity_id: switch.fish_tank
+- id: '1001233314237'
+  alias: TV Volume
+  trigger:
+    platform: state
+    entity_id: media_player.tv
+  action:
+    service: shell_command.set_tv_volume
