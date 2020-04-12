@@ -183,7 +183,7 @@ spotify:
   client_secret: !secret spotify_client_secret
 
 shell_command:
-  set_tv_volume: './set_tv_volume.sh {{ states("media_player.tv.attributes.volume_level") | (float * 100) | round(1) }}'
+  set_tv_volume: './set_tv_volume.sh {{ state_attr("media_player.tv", "volume_level") | (float * 100) | round(1) }}'
 
 # Components
 automation: !include automations.yaml
