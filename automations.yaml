@@ -153,6 +153,8 @@
   - service: switch.turn_off
     data:
       entity_id: switch.fish_tank
+      
+# Update TV Volume
 - id: '1001233314237'
   alias: TV Volume
   trigger:
@@ -160,3 +162,25 @@
     entity_id: media_player.tv
   action:
     service: shell_command.set_tv_volume
+
+# Turn on speakers when TV turns on
+- id: '1001233314117'
+  alias: Turn on speakers when TV turned on
+  trigger:
+    platform: state
+    entity_id: media_player.tv
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.living_room_speakers
+- id: '1001233314136'
+  alias: Turn off speakers when tv turned off
+  trigger:
+    platform: state
+    entity_id: media_player.tv
+    to: 'off'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.living_room_speakers
