@@ -8,8 +8,6 @@ active_media_players:
     - service: group.set
       data_template:
         object_id: media_players_active
-        visible: >
-          {{ trigger.to_state.state != '' }}
         entities: >
           {% if trigger.to_state.state != '' %}
             {{ trigger.to_state.state }}
