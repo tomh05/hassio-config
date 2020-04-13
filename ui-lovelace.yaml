@@ -183,6 +183,13 @@ views:
               - type: state-icon
                 tap_action:
                     action: toggle
+                entity: media_player.tv
+                style:
+                    top: 8%
+                    left: 27%
+              - type: state-icon
+                tap_action:
+                    action: toggle
                 entity: light.dining_table_uplighter
                 style:
                     top: 40%
