@@ -190,6 +190,13 @@ views:
               - type: state-icon
                 tap_action:
                     action: toggle
+                entity: switch.fish_tank
+                style:
+                    top: 8%
+                    left: 20%
+              - type: state-icon
+                tap_action:
+                    action: toggle
                 entity: light.dining_table_uplighter
                 style:
                     top: 40%
