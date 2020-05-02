@@ -180,6 +180,7 @@
     platform: state
     entity_id: media_player.tv
     to: 'off'
+    for: "00:02:00"
   action:
   - service: switch.turn_off
     data:
