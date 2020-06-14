@@ -32,12 +32,12 @@ day_phase:
           friendly_name: "Day Phase Real"
           entity_id: sensor.date_time
           value_template: >
-            {% if   now() > now().replace(hour=8).replace(minute=0).replace(second=0) and
-                    now() < now().replace(hour=9).replace(minute=0).replace(second=0) and 
+            {% if   now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
+                    now() < now().replace(hour=10).replace(minute=0).replace(second=0) and 
                     states.binary_sensor.workday_sensor.state == "on"
             %}
                 Morning
-            {% elif now() > now().replace(hour=9).replace(minute=0).replace(second=0) and
+            {% elif now() > now().replace(hour=10).replace(minute=0).replace(second=0) and
                     now() < now().replace(hour=18).replace(minute=0).replace(second=0)
             %}
                 Day
