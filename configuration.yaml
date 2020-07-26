@@ -168,7 +168,7 @@ camera:
     
 # LG TV
 webostv:
-  host: 192.168.1.25
+  host: 192.168.1.16
   name: TV
   turn_on_action:
       service: wake_on_lan.send_magic_packet
@@ -187,7 +187,7 @@ spotify:
   client_secret: !secret spotify_client_secret
 
 shell_command:
-  set_tv_volume: './set_tv_volume.sh {{ (state_attr("media_player.tv", "volume_level") | float * 100) | round(0) }}'
+  set_tv_volume: './set_tv_volume.sh {{ (78 * (10**( -2.5 * state_attr("media_player.tv", "volume_level") | float))) | round(0) | int }}'
 
 # Components
 automation: !include automations.yaml

@@ -1,0 +1,5 @@
+- platform: ping
+  host: 8.8.8.8
+  count: 2
+  scan_interval: 15
+  name: 'Internet Connectivity'
