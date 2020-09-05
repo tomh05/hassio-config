@@ -43,7 +43,7 @@
       transition: 120
       
 # Winter: Switch lights off after sunrise (provided it is daytime)
-- id: '3545251949409'
+- id: '3545251949449'
   alias: Lights off during daytime
   trigger:
   - platform: sun
