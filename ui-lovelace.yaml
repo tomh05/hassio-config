@@ -5,7 +5,6 @@ views:
       path: home
       badges:
         - sensor.day_phase
-        - device_tracker.tom_th
       cards:
         - type: thermostat
           entity: climate.living_room
@@ -23,8 +22,6 @@ views:
             - light.hallway
         - type: sensor
           entity: sensor.day_phase
-        - type: media-control
-          entity: media_player.spotify
         - type: entities
           title: "Should Heat"
           show_header_toggle: false
