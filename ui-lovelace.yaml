@@ -64,7 +64,7 @@ views:
           
     - title: Bedroom
       path: bedroom
-      icon: mdi:hotel
+      icon: mdi:bed
       cards:
         - type: horizontal-stack
           cards:
