@@ -27,7 +27,6 @@ config:
 conversation:
 discovery:
 frontend:
-    javascript_version: latest
 map:
 media_extractor:
     default_query: best
