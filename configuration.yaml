@@ -49,7 +49,6 @@ api:
 
 alexa:
   smart_home:
-      locale: en-GB
       endpoint: https://api.eu.amazonalexa.com/v3/events
       client_id: !secret alexa_skill_messaging_client_id
       client_secret: !secret alexa_skill_messaging_secret
@@ -67,6 +66,7 @@ alexa:
           light.living_room:
               name: Living Room Lights
               display_categories: LIGHT
+      locale: en-GB
 
 # History
 recorder:
