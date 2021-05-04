@@ -48,7 +48,7 @@ views:
             - light.kitchen_uplighter
             - light.dining_table_uplighter
         - type: entity-button
-          entity: switch.living_room_speakers
+          entity: switch.speakers
         - type: history-graph
           title: "Living Room"
           entities:
