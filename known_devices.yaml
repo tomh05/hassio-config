@@ -11,3 +11,11 @@ ble_de_08_b9_2e_1f_58:
   icon: mdi:wallet
   picture:
   track: true
+
+
+ble_0c_e4-a0-61-3c-60:
+  name: Honor Phone
+  mac: BLE_0C:E4:A0:61:3C:60
+  icon: mdi:cellphone
+  picture:
+  track: true
