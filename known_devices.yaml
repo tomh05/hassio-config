@@ -1,0 +1,13 @@
+ble_e4_ca_ad_1b_fe_95:
+  name: Tile Keys
+  mac: BLE_E4:CA:AD:1B:FE:95
+  icon: mdi:key-chain-variant
+  picture:
+  track: true
+
+ble_de_08_b9_2e_1f_58:
+  name: Nut Wallet
+  mac: BLE_DE:0B:B9:2E:1F:58
+  icon: mdi:wallet
+  picture:
+  track: true
