@@ -163,7 +163,7 @@
   action:
     service: shell_command.set_tv_volume
 
-# Turn on speakers when TV turns on
+# Turn on/off speakers when TV turns on/off
 - id: '1001233314117'
   alias: Turn on speakers when TV turned on
   trigger:
@@ -185,3 +185,29 @@
   - service: switch.turn_off
     data:
       entity_id: switch.speakers
+
+
+# Turn off lights when I leave home
+- id: '1333233314117'
+  alias: Turn off lights when I leave home
+  trigger:
+    platform: state
+    entity_id: device_tracker.ble_de_08_b9_2e_1f_58, device_tracker.ble_e4_ca_ad_1b_fe_95
+    to: 'not_home'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: device_tracker.ble_de_08_b9_2e_1f_58
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.ble_e4_ca_ad_1b_fe_95
+      state: 'not_home'
+  action:
+  - service: light.turn_off
+    data:
+      area_id:
+      - spare_bedroom
+      - bedroom
+      - hallway
+      - living_room
