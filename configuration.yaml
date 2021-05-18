@@ -173,7 +173,7 @@ spotify:
   client_secret: !secret spotify_client_secret
 
 shell_command:
-  set_tv_volume: './set_tv_volume.sh {{ (78 * (10**( -2.5 * state_attr("media_player.tv", "volume_level") | float))) | round(0) | int }}'
+  set_tv_volume: './set_tv_volume.sh {{  (78 * (10**( -2.5 * (state_attr("media_player.tv", "volume_level") * (1 - state_attr("media_player.tv", "is_volume_muted") | int)) | float))) | round(0) | int }}'
 
 device_tracker:
   - platform: bluetooth_le_tracker
