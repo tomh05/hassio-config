@@ -192,7 +192,9 @@
   alias: Turn off lights when I leave home
   trigger:
     platform: state
-    entity_id: device_tracker.ble_de_08_b9_2e_1f_58, device_tracker.ble_e4_ca_ad_1b_fe_95
+    entity_id:
+    - device_tracker.ble_de_08_b9_2e_1f_58
+    - device_tracker.ble_e4_ca_ad_1b_fe_95
     to: 'not_home'
   condition:
     condition: and
