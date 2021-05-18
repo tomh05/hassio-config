@@ -184,6 +184,8 @@ shell_command:
 device_tracker:
   - platform: bluetooth_le_tracker
     track_new_devices: False
+    
+system_health:
   
 # Components
 automation: !include automations.yaml
