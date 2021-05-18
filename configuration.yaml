@@ -117,12 +117,6 @@ zone:
       longitude: !secret zone_home_long
       radius: 250
 
-    - name: Work
-      latitude: !secret zone_work_lat
-      longitude: !secret zone_work_long
-      radius: 200
-      icon: mdi:briefcase
-
 http:
     cors_allowed_origins:
         - https://hassio.local:7080
