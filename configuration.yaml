@@ -86,6 +86,7 @@ history:
             - light
             - switch
             - sensor
+            - device_tracker
 
 logbook:
     exclude:
@@ -95,10 +96,6 @@ logbook:
             - sensor.cpu_temp
 logger:
     default: warning
-    logs:
-        custom_components.light.magicbluelight: debug
-        magicblue.magicbluelib: debug
-        homeassistant.components.device_tracker.nmap_tracker: warn
 
 # Text To Speech
 tts:
