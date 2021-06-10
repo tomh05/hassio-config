@@ -177,6 +177,8 @@ device_tracker:
     track_new_devices: False
     
 system_health:
+
+mobile_app:
   
 # Components
 automation: !include automations.yaml
