@@ -6,13 +6,6 @@ views:
       badges:
         - sensor.day_phase
       cards:
-        - type: thermostat
-          entity: climate.living_room
-        - type: picture-glance
-          title: Fish Tank
-          entities:
-            - switch.fish_tank
-          camera_image: camera.fish_tank
         - type: entities
           title: Rooms
           entities:
@@ -22,11 +15,6 @@ views:
             - light.hallway
         - type: sensor
           entity: sensor.day_phase
-        - type: entities
-          title: "Should Heat"
-          show_header_toggle: false
-          entities:
-              - binary_sensor.should_heat
 
     - title: Living Room
       path: living_room
@@ -59,8 +47,6 @@ views:
           entity: climate.living_room
         - type: media-control
           entity: media_player.tv
-        - type: media-control
-          entity: media_player.chromecast
           
     - title: Bedroom
       path: bedroom
@@ -136,7 +122,7 @@ views:
       icon: mdi:floor-plan
       cards:
         - type: picture-elements
-          image: /local/floorplan.png
+          image: /local/floorplan.jpg
           elements:
               - type: state-icon
                 tap_action:
