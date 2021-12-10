@@ -64,46 +64,9 @@
     entity_id: 
       - light.bedroom
       - light.living_room
-      - light.hallway
     data:
       transition: 120
-- id: '2545251249409'
-  alias: Switch off heating at night
-  trigger:
-  - entity_id: sensor.day_phase
-    platform: state
-    from: Evening
-    to: Night
-  action:
-  - service: climate.set_temperature
-    entity_id: climate.living_room
-    data:
-        temperature: 15
-- id: '2545251149209'
-  alias: Switch on hallway in evening
-  trigger:
-  - entity_id: sensor.day_phase
-    platform: state
-    from: Day
-    to: Evening
-  action:
-  - service: light.turn_on
-    entity_id:
-    - light.hallway
-    data:
-        brightness: 50
-- id: '2545211239409'
-  alias: Switch on heating in morning
-  trigger:
-  - entity_id: sensor.day_phase
-    platform: state
-    from: Night
-    to: Morning
-  action:
-  - service: climate.set_temperature
-    entity_id: climate.living_room
-    data:
-        temperature: 20
+
 - id: '1557251710350'
   alias: Arrive at work
   trigger:
@@ -209,7 +172,19 @@
   - service: light.turn_off
     data:
       area_id:
-      - spare_bedroom
       - bedroom
-      - hallway
+      - living_room
+
+
+# Turn on lights when I get home in the dark
+- id: '1001233314129'
+  alias: Turn on lights when I get home in the dark
+  trigger:
+    platform: state
+    entity_id: binary_sensor.pir_sensor
+    to: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      area_id:
       - living_room
