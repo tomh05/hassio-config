@@ -180,6 +180,9 @@ device_tracker:
 system_health:
 
 mobile_app:
+
+emulated_hue:
+  listen_port: 80
   
 # Components
 automation: !include automations.yaml
