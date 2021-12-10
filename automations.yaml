@@ -2,9 +2,8 @@
 - id: '1545851949438'
   alias: Bedtime
   trigger:
-  - entity_id: sensor.day_phase
-    platform: state
-    to: Night
+  - at: '22:30:00'
+    platform: time
   condition: []
   action:
   - service: script.turn_on
@@ -13,10 +12,8 @@
 - id: '3545251949432'
   alias: Workday Morning Energise
   trigger:
-  - entity_id: sensor.day_phase
-    platform: state
-    from: Night
-    to: Morning
+  - at: '09:00:00'
+    platform: time
   action:
   - service: script.turn_on
     entity_id: script.wakeup
@@ -24,10 +21,8 @@
 - id: '3545251949409'
   alias: Lights off during daytime
   trigger:
-    platform: state
-    entity_id: sensor.day_phase
-    from: Morning
-    to: Day
+  - at: '10:00:00'
+    platform: time
   condition:
     condition: sun
     after: sunrise
@@ -67,56 +62,6 @@
     data:
       transition: 120
 
-- id: '1557251710350'
-  alias: Arrive at work
-  trigger:
-  - platform: zone
-    entity_id: device_tracker.tom_th
-    zone: zone.work
-    event: enter  # or "leave"
-  condition:
-  - after: '07:00:00'
-    before: '11:00:00'
-    condition: time
-  action:
-  - event: ARRIVED_AT_WORK
-    event_data: {}
-- id: '1557260814256'
-  alias: Leave Work Alarm
-  trigger:
-  - at: 09:30:00
-    platform: time
-  condition:
-  - condition: zone
-    entity_id: device_tracker.tom_th
-    zone: zone.home
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.living_room
-      flash: long
-- id: '1557233314252'
-  alias: Fish Tank On in morning
-  trigger:
-  - at: '08:30:00'
-    platform: time
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id: switch.fish_tank
-- id: '1557233314237'
-  alias: Fish Tank Off at night
-  trigger:
-  - at: '22:00:00'
-    platform: time
-  action:
-  - service: switch.turn_off
-    data:
-      entity_id: switch.fish_tank
-      
 # Update TV Volume
 - id: '1001233314237'
   alias: TV Volume
