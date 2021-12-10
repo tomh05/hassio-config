@@ -1,18 +1,12 @@
 google_actions:
   filter:
     include_entities:
-      - switch.chromecast
 
       - script.cinema_mode
 
       - input_boolean.holiday_mode
-      - input_boolean.day_phase_morning
-      - input_boolean.day_phase_day
-      - input_boolean.day_phase_evening
-      - input_boolean.day_phase_night
 
   entity_config:
-
     script.cinema_mode:
       name: Cinema Mode
       room: Living Room
