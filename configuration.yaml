@@ -5,6 +5,7 @@ homeassistant:
   elevation: 24
   unit_system: metric
   time_zone: Europe/London
+  external_url: "https://thelanbeforetime.duckdns.org:8123"
 
   customize: !include_dir_merge_named configuration/customize
   packages: !include_dir_merge_named configuration/package
