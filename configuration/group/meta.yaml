@@ -1,8 +1,0 @@
-meta_switches:
-  name: Rooms
-  icon: mdi:home-variant
-  entities:
-  - light.living_room
-  - light.bedroom
-  - light.spare_bedroom
-  - light.hallway
