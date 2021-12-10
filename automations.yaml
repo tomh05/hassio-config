@@ -183,6 +183,10 @@
     platform: state
     entity_id: binary_sensor.pir_sensor
     to: 'on'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "00:30:00"
   action:
   - service: light.turn_on
     data:
