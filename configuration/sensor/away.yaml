@@ -1,8 +1,0 @@
-#- platform: history_stats
-#  name: "Replay Living Room"
-#  entity_id: light.living_room
-#  state: "on"
-#  type: count
-#  start: >
-#    {{ as_timestamp(now()) - (7*86400) }}
-#  duration: 00:00:30
