@@ -184,9 +184,10 @@
     entity_id: binary_sensor.pir_sensor
     to: 'on'
   condition:
-    condition: sun
-    after: sunset
-    after_offset: "00:30:00"
+    alias: "Sun down"
+    condition: state  # from sunset until sunrise
+    entity_id: sun.sun
+    state: "below_horizon"
   action:
   - service: light.turn_on
     data:
