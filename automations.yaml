@@ -46,8 +46,7 @@
     event: sunrise
     # trigger 45 minutes after sunrise.
     offset: "00:45:00"
-  c
-  ondition:
+  condition:
      alias: "After 10am"
      condition: time
      after: "10:00:00"
