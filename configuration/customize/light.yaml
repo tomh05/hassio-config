@@ -27,12 +27,3 @@ light.spare_bedroom_lamp:
 
 light.spare_bedroom_ceiling:
   icon: mdi:ceiling-light
-
-light.hallway:
-  icon: mdi:shoe-formal
-
-light.hallway_front:
-  icon: mdi:ceiling-light
-
-light.hallway_back:
-  icon: mdi:ceiling-light
