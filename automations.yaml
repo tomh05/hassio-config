@@ -46,14 +46,11 @@
     event: sunrise
     # trigger 45 minutes after sunrise.
     offset: "00:45:00"
-  - platform: state
-    entity_id: sensor.day_phase
-    from: Morning
-    to: Day
-  condition:
-    condition: state
-    entity_id: sensor.day_phase
-    state: Day
+  c
+  ondition:
+     alias: "After 10am"
+     condition: time
+     after: "10:00:00"
   action:
   - service: light.turn_off
     entity_id: 
