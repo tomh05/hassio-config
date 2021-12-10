@@ -4,7 +4,7 @@ views:
       icon: mdi:home
       path: home
       badges:
-        - sensor.day_phase
+        - binary_sensor.pir_sensor
       cards:
         - type: entities
           title: Rooms
@@ -13,8 +13,6 @@ views:
             - entity: light.bedroom
               name: Main Bedroom
             - light.hallway
-        - type: sensor
-          entity: sensor.day_phase
 
     - title: Living Room
       path: living_room
