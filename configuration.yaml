@@ -154,12 +154,12 @@ webostv:
       service: wake_on_lan.send_magic_packet
       data:
           mac: "78:5D:C8:E9:6A:B5"
-  customize:
-      sources:
-          - livetv
-          - youtube
-          - netflix
-          - component
+#  customize:
+#      sources:
+#          - livetv
+#          - youtube
+#          - netflix
+#          - component
 
 spotify:
   client_id: !secret spotify_client_id
