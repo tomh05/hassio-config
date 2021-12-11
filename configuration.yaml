@@ -202,7 +202,7 @@ group: !include_dir_merge_named configuration/group
 input_boolean: !include_dir_merge_named configuration/input_boolean
 light: !include_dir_merge_list configuration/light
 media_player: !include_dir_merge_list configuration/media_player
-scene: !include_dir_merge_list configuration/scene
+scene: !include scenes.yaml
 script: !include_dir_merge_named configuration/script
 sensor: !include_dir_merge_list configuration/sensor
 switch: !include_dir_merge_list configuration/switch
