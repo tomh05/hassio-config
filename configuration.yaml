@@ -190,8 +190,6 @@ mobile_app:
 emulated_hue:
   listen_port: 80
   expose_by_default: false
-  entities:
-    
 
 # Components
 automation: !include automations.yaml
