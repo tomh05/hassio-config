@@ -189,7 +189,9 @@ mobile_app:
 
 emulated_hue:
   listen_port: 80
-  expose_by_default: false
+  expose_by_default: true
+  exposed_domains:
+    - scene
 
 # Components
 automation: !include automations.yaml
