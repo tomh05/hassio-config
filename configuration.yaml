@@ -192,6 +192,10 @@ emulated_hue:
   expose_by_default: true
   exposed_domains:
     - scene
+  entities:
+    light.led_strip:
+      name: "LED Strip"
+      hidden: false
 
 # Components
 automation: !include automations.yaml
