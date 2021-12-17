@@ -200,6 +200,12 @@ emulated_hue:
     script.goodnight:
       name: "Goodnight"
       hidden: false
+    scene.dinner_time:
+      name: "Dinner Time"
+      hidden: false
+    scene.tv_time:
+      name: "TV Time"
+      hidden: false
 
 # Components
 automation: !include automations.yaml
