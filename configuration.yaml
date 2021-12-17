@@ -187,15 +187,15 @@ system_health:
 
 mobile_app:
 
-emulated_hue:
-  listen_port: 80
-  expose_by_default: true
-  exposed_domains:
-    - scene
-  entities:
-    light.led_strip:
-      name: "LED Strip"
-      hidden: false
+#emulated_hue:
+#  listen_port: 80
+#  expose_by_default: true
+#  exposed_domains:
+#    - scene
+#  entities:
+#    light.led_strip:
+#      name: "LED Strip"
+#      hidden: false
 
 # Components
 automation: !include automations.yaml
