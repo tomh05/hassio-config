@@ -197,6 +197,9 @@ emulated_hue:
     switch.kitchen_counter:
       name: "Kitchen Counter"
       hidden: false
+    script.goodnight:
+      name: "Goodnight"
+      hidden: false
 
 # Components
 automation: !include automations.yaml
