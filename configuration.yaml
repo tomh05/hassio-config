@@ -194,7 +194,7 @@ emulated_hue:
     light.led_strip:
       name: "LED Strip"
       hidden: false
-    switch.led_strip:
+    switch.kitchen_counter:
       name: "Kitchen Counter"
       hidden: false
 
