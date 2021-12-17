@@ -1,6 +1,7 @@
 goodnight:
   sequence:
   - service: homeassistant.turn_off
-    entity_id:
-    - group.all_lights
-    - switch.speakers
+    target:
+      area_id:
+        - bedroom
+        - living_room
