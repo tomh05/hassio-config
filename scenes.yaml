@@ -361,3 +361,351 @@
       friendly_name: Kitchen 3
       supported_features: 63
       state: 'on'
+
+- id: '1639783341257'
+  name: TV Time
+  entities:
+    light.kitchen_1:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 99
+      hs_color:
+      - 199.794
+      - 76.078
+      rgb_color:
+      - 61
+      - 190
+      - 255
+      xy_color:
+      - 0.16
+      - 0.238
+      effect: none
+      friendly_name: Kitchen 1
+      supported_features: 63
+      state: 'on'
+    light.kitchen_2:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 64
+      hs_color:
+      - 282.74
+      - 85.882
+      rgb_color:
+      - 192
+      - 36
+      - 255
+      xy_color:
+      - 0.301
+      - 0.122
+      effect: none
+      friendly_name: Kitchen 2
+      supported_features: 63
+      state: 'on'
+    light.kitchen_3:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 128
+      hs_color:
+      - 256.706
+      - 100
+      rgb_color:
+      - 71
+      - 0
+      - 255
+      xy_color:
+      - 0.162
+      - 0.052
+      effect: none
+      friendly_name: Kitchen 3
+      supported_features: 63
+      state: 'on'
+    switch.kitchen_counter:
+      friendly_name: Kitchen Counter
+      state: 'off'
+    light.living_area_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 97
+      friendly_name: Living Area Lamp
+      supported_features: 41
+      state: 'on'
+    light.bedside_window:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 115
+      color_temp: 436
+      hs_color:
+      - 29.48
+      - 80.589
+      rgb_color:
+      - 255
+      - 150
+      - 49
+      xy_color:
+      - 0.57
+      - 0.389
+      effect: none
+      friendly_name: Living Room Uplighter
+      supported_features: 63
+      icon: mdi:lamp
+      state: 'on'
+    switch.fairy_lights:
+      friendly_name: Fairy Lights
+      icon: mdi:string-lights
+      state: 'on'
+    light.led_strip:
+      effect_list:
+      - Android
+      - Blink
+      - Blink Rainbow
+      - Bouncing Balls
+      - Bpm
+      - Breathe
+      - Candle
+      - Candle Multi
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Random
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkles
+      - Colorwaves
+      - Dissolve
+      - Dissolve Rnd
+      - Drip
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Fireworks 1D
+      - Fireworks Starburst
+      - Glitter
+      - Gradient
+      - Halloween
+      - Halloween Eyes
+      - Heartbeat
+      - ICU
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Merry Christmas
+      - Meteor
+      - Meteor Smooth
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Oscillate
+      - Pacifica
+      - Palette
+      - Percent
+      - Plasma
+      - Police
+      - Police All
+      - Popcorn
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Ripple Rainbow
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scan Dual
+      - Scanner
+      - Scanner Dual
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Solid
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Spots
+      - Spots Fade
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Mega
+      - Strobe Rainbow
+      - Sweep
+      - Sweep Random
+      - Theater
+      - Theater Rainbow
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklecat
+      - Twinklefox
+      - Two Areas
+      - Two Dots
+      - Wipe
+      - Wipe Random
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 156
+      hs_color:
+      - 240
+      - 74.902
+      rgb_color:
+      - 64
+      - 64
+      - 255
+      xy_color:
+      - 0.158
+      - 0.075
+      effect: Solid
+      intensity: 146
+      palette: '* Color 1'
+      reverse: false
+      speed: 129
+      friendly_name: LED Strip
+      icon: mdi:led-strip-variant
+      supported_features: 36
+      state: 'on'
+    switch.led_strip_nightlight:
+      duration: 60
+      fade: true
+      target_brightness: 0
+      friendly_name: LED Strip Nightlight
+      icon: mdi:weather-night
+      state: 'off'
+    switch.led_strip_sync_receive:
+      udp_port: 21324
+      friendly_name: LED Strip Sync Receive
+      icon: mdi:download-network-outline
+      state: 'on'
+    switch.led_strip_sync_send:
+      udp_port: 21324
+      friendly_name: LED Strip Sync Send
+      icon: mdi:upload-network-outline
+      state: 'off'
+    select.wled_playlist:
+      options: []
+      friendly_name: WLED Playlist
+      icon: mdi:play-speed
+      state: unavailable
+    select.wled_preset:
+      options: []
+      friendly_name: WLED Preset
+      icon: mdi:playlist-play
+      state: unavailable
+    select.wled_color_palette:
+      options:
+      - '* Color 1'
+      - '* Color Gradient'
+      - '* Colors 1&2'
+      - '* Colors Only'
+      - '* Random Cycle'
+      - Analogous
+      - April Night
+      - Atlantica
+      - Aurora
+      - Autumn
+      - Beach
+      - Beech
+      - Breeze
+      - C9
+      - Cloud
+      - Cyane
+      - Default
+      - Departure
+      - Drywet
+      - Fire
+      - Forest
+      - Grintage
+      - Hult
+      - Hult 64
+      - Icefire
+      - Jul
+      - Landscape
+      - Lava
+      - Light Pink
+      - Magenta
+      - Magred
+      - Ocean
+      - Orange & Teal
+      - Orangery
+      - Party
+      - Pastel
+      - Rainbow
+      - Rainbow Bands
+      - Red & Blue
+      - Rewhi
+      - Rivendell
+      - Sakura
+      - Sherbet
+      - Splash
+      - Sunset
+      - Sunset 2
+      - Tertiary
+      - Tiamat
+      - Vintage
+      - Yelblu
+      - Yellowout
+      - Yelmag
+      friendly_name: WLED Color Palette
+      icon: mdi:palette-outline
+      state: '* Color 1'
+    number.wled_speed:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: WLED Speed
+      icon: mdi:speedometer
+      state: '129'
+    number.wled_intensity:
+      min: 0
+      max: 255
+      step: 1
+      mode: auto
+      friendly_name: WLED Intensity
+      state: '146'
