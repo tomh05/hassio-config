@@ -1,34 +1,33 @@
 - name: Everything Off
   entities:
-    group.all_lights: off
-    group.all_remotes: off
-    group.all_switches: off
-    group.media: off
-
+    group.all_lights: false
+    group.all_remotes: false
+    group.all_switches: false
+    group.media: false
+  id: 2f40f6de38af4a07b6a1123fa89359c2
 - name: Relaxed Cooking
   entities:
-    script.relaxed_cooking: on
-
+    script.relaxed_cooking: true
+  id: 777846cf7c384dcaa89d470ed5062404
 - name: Bedtime
   entities:
-    script.bedtime: on
-
+    script.bedtime: true
+  id: 5d7f7c01fa45451c84d06e33028aaa9a
 - id: '1639782547392'
   name: Dinner Time
   entities:
     switch.fairy_lights:
-      friendly_name: Fairy Lights
+      restored: true
       icon: mdi:string-lights
-      state: 'on'
+      friendly_name: Fairy Lights
+      supported_features: 0
+      state: unavailable
     light.bedside_window:
       min_mireds: 153
       max_mireds: 500
-      effect_list:
-      - colorloop
-      - random
       supported_color_modes:
       - color_temp
-      - hs
+      - xy
       color_mode: color_temp
       brightness: 247
       color_temp: 382
@@ -42,9 +41,10 @@
       xy_color:
       - 0.535
       - 0.388
-      effect: none
+      mode: normal
+      dynamics: none
       friendly_name: Living Room Uplighter
-      supported_features: 63
+      supported_features: 40
       icon: mdi:lamp
       state: 'on'
     light.led_strip:
@@ -157,50 +157,46 @@
       color_mode: rgb
       brightness: 255
       hs_color:
-      - 181.953
-      - 84.314
+      - 254.717
+      - 62.353
       rgb_color:
-      - 40
-      - 248
+      - 135
+      - 96
       - 255
       xy_color:
-      - 0.156
-      - 0.331
+      - 0.223
+      - 0.127
       effect: Solid
-      intensity: 137
-      palette: Default
-      reverse: false
-      speed: 136
-      friendly_name: LED Strip
       icon: mdi:led-strip-variant
+      friendly_name: LED Strip
       supported_features: 36
       state: 'on'
     switch.led_strip_nightlight:
       duration: 60
       fade: true
       target_brightness: 0
-      friendly_name: LED Strip Nightlight
       icon: mdi:weather-night
+      friendly_name: LED Strip Nightlight
       state: 'off'
     switch.led_strip_sync_receive:
       udp_port: 21324
-      friendly_name: LED Strip Sync Receive
       icon: mdi:download-network-outline
+      friendly_name: LED Strip Sync Receive
       state: 'on'
     switch.led_strip_sync_send:
       udp_port: 21324
-      friendly_name: LED Strip Sync Send
       icon: mdi:upload-network-outline
+      friendly_name: LED Strip Sync Send
       state: 'off'
     select.wled_playlist:
       options: []
-      friendly_name: WLED Playlist
       icon: mdi:play-speed
+      friendly_name: WLED Playlist
       state: unavailable
     select.wled_preset:
       options: []
-      friendly_name: WLED Preset
       icon: mdi:playlist-play
+      friendly_name: WLED Preset
       state: unavailable
     select.wled_color_palette:
       options:
@@ -256,16 +252,16 @@
       - Yelblu
       - Yellowout
       - Yelmag
-      friendly_name: WLED Color Palette
       icon: mdi:palette-outline
+      friendly_name: WLED Color Palette
       state: Default
     number.wled_speed:
       min: 0
       max: 255
       step: 1
       mode: auto
-      friendly_name: WLED Speed
       icon: mdi:speedometer
+      friendly_name: WLED Speed
       state: '136'
     number.wled_intensity:
       min: 0
@@ -279,8 +275,10 @@
       - brightness
       color_mode: brightness
       brightness: 255
+      mode: normal
+      dynamics: none
       friendly_name: Living Area Lamp
-      supported_features: 41
+      supported_features: 40
       state: 'on'
     switch.kitchen_counter:
       friendly_name: Kitchen Counter
@@ -288,80 +286,75 @@
     light.kitchen_1:
       min_mireds: 153
       max_mireds: 500
-      effect_list:
-      - colorloop
-      - random
       supported_color_modes:
       - color_temp
-      - hs
-      color_mode: hs
-      brightness: 255
+      - xy
+      color_mode: color_temp
+      brightness: 153
+      color_temp: 404
       hs_color:
-      - 285
-      - 70.588
+      - 28.941
+      - 73.435
       rgb_color:
-      - 210
-      - 75
       - 255
+      - 158
+      - 67
       xy_color:
-      - 0.321
-      - 0.148
-      effect: none
+      - 0.55
+      - 0.39
+      mode: normal
+      dynamics: none
       friendly_name: Kitchen 1
-      supported_features: 63
+      supported_features: 40
       state: 'on'
     light.kitchen_2:
       min_mireds: 153
       max_mireds: 500
-      effect_list:
-      - colorloop
-      - random
       supported_color_modes:
       - color_temp
-      - hs
+      - xy
       color_mode: color_temp
-      brightness: 255
-      color_temp: 319
+      brightness: 156
+      color_temp: 385
       hs_color:
-      - 27.618
-      - 53.372
+      - 28.631
+      - 69.118
       rgb_color:
       - 255
-      - 181
-      - 118
+      - 162
+      - 78
       xy_color:
-      - 0.485
-      - 0.381
-      effect: none
+      - 0.538
+      - 0.388
+      mode: normal
+      dynamics: none
       friendly_name: Kitchen 2
-      supported_features: 63
+      supported_features: 40
       state: 'on'
     light.kitchen_3:
       min_mireds: 153
       max_mireds: 500
-      effect_list:
-      - colorloop
-      - random
       supported_color_modes:
       - color_temp
-      - hs
-      color_mode: hs
-      brightness: 230
+      - xy
+      color_mode: color_temp
+      brightness: 140
+      color_temp: 378
       hs_color:
-      - 285
-      - 70.588
+      - 28.518
+      - 67.51
       rgb_color:
-      - 210
-      - 75
       - 255
+      - 164
+      - 82
       xy_color:
-      - 0.321
-      - 0.148
-      effect: none
+      - 0.532
+      - 0.388
+      mode: normal
+      dynamics: none
       friendly_name: Kitchen 3
-      supported_features: 63
+      supported_features: 40
       state: 'on'
-
 - id: '1639783341257'
   name: TV Time
   entities:
