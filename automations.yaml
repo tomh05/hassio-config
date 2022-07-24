@@ -9,14 +9,14 @@
   - service: script.turn_on
     entity_id: script.bedtime
 # Wake up routine
-- id: '3545251949432'
-  alias: Workday Morning Energise
-  trigger:
-  - at: '09:00:00'
-    platform: time
-  action:
-  - service: script.turn_on
-    entity_id: script.wakeup
+#- id: '3545251949432'
+#  alias: Workday Morning Energise
+#  trigger:
+#  - at: '09:00:00'
+#    platform: time
+#  action:
+#  - service: script.turn_on
+#    entity_id: script.wakeup
 # Summer: Switch lights off during day time (provided sun is up)
 - id: '3545251949409'
   alias: Lights off during daytime
