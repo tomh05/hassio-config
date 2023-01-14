@@ -137,14 +137,6 @@ tplink:
     - host: 192.168.1.19
     - host: 192.168.1.30
     - host: 192.168.1.41
-
-# Webcam
-ffmpeg:
-
-camera: 
-  - platform: ffmpeg
-    input: /dev/video0
-    name: fish_tank
     
 # LG TV
 webostv:
@@ -189,12 +181,22 @@ mobile_app:
 
 emulated_hue:
   listen_port: 80
-  expose_by_default: true
-  exposed_domains:
-    - scene
+  expose_by_default: false
   entities:
     light.led_strip:
       name: "LED Strip"
+      hidden: false
+    switch.kitchen_counter:
+      name: "Kitchen Counter"
+      hidden: false
+    script.goodnight:
+      name: "Goodnight"
+      hidden: false
+    scene.dinner_time:
+      name: "Dinner Time"
+      hidden: false
+    scene.tv_time:
+      name: "TV Time"
       hidden: false
 
 # Components
