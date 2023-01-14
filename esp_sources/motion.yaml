@@ -1,0 +1,56 @@
+esphome:
+  name: motion
+  platform: ESP8266
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "4243ec5248200a1b0135260a3c0f47b0"
+
+wifi:
+  ssid: ""
+  password: "password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Motion Fallback Hotspot"
+    password: "zHyXUGlTPcyc"
+
+captive_portal:
+
+light:
+  - platform: binary
+    id: status_light
+    name: "Switch state"
+    output: light_output
+    
+output:
+  - id: light_output
+    platform: gpio
+    pin: GPIO2
+
+binary_sensor:
+  - platform: gpio
+    pin: 14
+    name: "PIR Sensor"
+    device_class: motion
+    on_press:
+      then:
+        - light.turn_off: status_light
+    on_release:
+      then:
+        - light.turn_on: status_light
+    
+dallas:
+  - pin: 12
+
+# Individual sensors
+sensor:
+  - platform: dallas
+    address: 0xE50317223A2AFF28
+    name: "Temperature"

@@ -1,0 +1,30 @@
+esphome:
+  name: kitchen-led-relay
+  platform: ESP8266
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "a6f5429c368b3b10b99694360b238af4"
+
+wifi:
+  ssid: ""
+  password: ""
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Kitchen-Led-Relay"
+    password: "cRElyGJ0x4ra"
+
+captive_portal:
+
+switch:
+  - platform: gpio
+    name: "Kitchen Counter"
+    pin: GPIO0
+    inverted: true
