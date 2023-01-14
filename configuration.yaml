@@ -32,8 +32,6 @@ map:
 media_extractor:
     default_query: best
 sun:
-updater:
-    include_used_components: true
 wake_on_lan:
 
 #influxdb:
@@ -127,8 +125,9 @@ ifttt:
 notify:
   - platform: html5
     name: notify
-    gcm_api_key: !secret gcm_api_key
-    gcm_sender_id: !secret gcm_sender_id
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_priv_key: !secret vapid_priv_key
+    vapid_email: !secret vapid_email
 
 # TP Link Smart Plugs
 tplink:
