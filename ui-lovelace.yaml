@@ -6,6 +6,8 @@ views:
       badges:
         - binary_sensor.pir_sensor
       cards:
+        - type: thermostat
+          entity: climate.living_room_temperature
         - type: entities
           title: Rooms
           entities:
@@ -21,18 +23,16 @@ views:
         - type: horizontal-stack
           cards:
             - type: light
-              entity: light.living_room_uplighters
+              entity: light.living_room_uplighter
               name: Uplighters
             - type: light
-              entity: light.living_room_ceiling
+              entity: light.living_room_window
               name: Ceiling
         - type: entities
           title: Lights
           entities:
-            - light.living_room_ceiling_left
-            - light.living_room_ceiling_right
-            - light.kitchen_uplighter
-            - light.dining_table_uplighter
+            - light.living_room_uplighter
+            - light.living_room_window
         - type: entity-button
           entity: switch.speakers
         - type: history-graph
@@ -40,9 +40,8 @@ views:
           entities:
             - sensor.living_room_temperature
             - switch.heater
-
         - type: thermostat
-          entity: climate.living_room
+          entity: climate.living_room_temperature
         - type: media-control
           entity: media_player.tv
           
@@ -53,17 +52,20 @@ views:
         - type: horizontal-stack
           cards:
             - type: light
-              entity: light.bedside
-              name: Bedside
+              entity: light.bedside_left
+              name: Bedside Left
             - type: light
-              entity: light.bedroom_ceiling
-              name: Ceiling
+              entity: light.bedside_right
+              name: Bedside Right
+            - type: light
+              entity: light.bedroom_uplighter
+              name: Bedroom Uplighter
         - type: entities
           title: Lights
           entities:
-            - light.bedroom_ceiling
-            - light.bedside_door
-            - light.bedside_window
+            - light.bedroom_uplighter
+            - light.bedside_left
+            - light.bedside_right
         - type: entities
           entities:
             - entity: scene.bedtime
