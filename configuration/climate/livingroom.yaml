@@ -1,5 +1,4 @@
-climate:
-  - platform: generic_thermostat
+- platform: generic_thermostat
     name: Living Room Heating
     heater: switch.living_room_radiator
     target_sensor: sensor.living_room_temperature
