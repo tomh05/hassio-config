@@ -1,18 +1,18 @@
 - platform: generic_thermostat
-    name: Living Room Heating
-    heater: switch.living_room_radiator
-    target_sensor: sensor.living_room_temperature
-    min_temp: 15
-    max_temp: 28
-    ac_mode: false
-    target_temp: 17
-    cold_tolerance: 0.3
-    hot_tolerance: 0
-    min_cycle_duration:
-      seconds: 60
-    keep_alive:
-      minutes: 3
-    initial_hvac_mode: "off"
-    away_temp: 16
-    precision: 0.1
-    target_temp_step: 0.5
+  name: Living Room Heating
+  heater: switch.living_room_radiator
+  target_sensor: sensor.living_room_temperature
+  min_temp: 15
+  max_temp: 28
+  ac_mode: false
+  target_temp: 17
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 60
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 16
+  precision: 0.1
+  target_temp_step: 0.5
