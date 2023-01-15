@@ -7,7 +7,7 @@ views:
         - binary_sensor.pir_sensor
       cards:
         - type: thermostat
-          entity: climate.living_room_temperature
+          entity: climate.living_room_heating
         - type: entities
           title: Rooms
           entities:
@@ -41,7 +41,7 @@ views:
             - sensor.living_room_temperature
             - switch.heater
         - type: thermostat
-          entity: climate.living_room_temperature
+          entity: climate.living_room_heating
         - type: media-control
           entity: media_player.tv
           
