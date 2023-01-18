@@ -194,6 +194,9 @@ emulated_hue:
     scene.tv_time:
       name: "TV Time"
       hidden: false
+    light.spotlight:
+      name: "Spotlight"
+      hidden: false
 
 # Components
 automation: !include automations.yaml
