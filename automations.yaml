@@ -1,13 +1,3 @@
-# Start the bedtime script when it becomes night.
-- id: '1545851949438'
-  alias: Bedtime
-  trigger:
-  - at: '22:30:00'
-    platform: time
-  condition: []
-  action:
-  - service: script.turn_on
-    entity_id: script.bedtime
 # Wake up routine
 #- id: '3545251949432'
 #  alias: Workday Morning Energise
