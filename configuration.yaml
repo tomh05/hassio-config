@@ -139,30 +139,30 @@ tplink:
     - host: 192.168.1.41
     
 # LG TV
-webostv:
-  host: 192.168.1.10
-  name: TV
-  turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-          mac: "78:5D:C8:E9:6A:B5"
-  customize:
-      sources:
-          - Live TV
-          - component
-          - Disney+
-          - AirPlay
-          - All 4
-          - Amazon Prime Video
-          - Apple TV
-          - HDMI 1
-          - HDMI 2
-          - ITV Hub
-          - Netflix
-          - Screen Share
-          - Spotify - Music and Podcasts
-          - Wii
-          - YouTube
+#webostv:
+#  host: 192.168.1.10
+#  name: TV
+#  turn_on_action:
+#      service: wake_on_lan.send_magic_packet
+#      data:
+#          mac: "78:5D:C8:E9:6A:B5"
+#  customize:
+#      sources:
+#          - Live TV
+#          - component
+#          - Disney+
+#          - AirPlay
+#          - All 4
+v          - Amazon Prime Video
+#          - Apple TV
+#          - HDMI 1
+#          - HDMI 2
+#          - ITV Hub
+#          - Netflix
+#          - Screen Share
+#          - Spotify - Music and Podcasts
+#          - Wii
+#          - YouTube
 
 shell_command:
   set_tv_volume: './set_tv_volume.sh {{  (78 * (10**( -2.5 * (state_attr("media_player.tv", "volume_level") * (1 - state_attr("media_player.tv", "is_volume_muted") | int)) | float))) | round(0) | int }}'
