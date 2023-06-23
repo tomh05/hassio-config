@@ -197,6 +197,9 @@ emulated_hue:
     light.spotlight:
       name: "Spotlight"
       hidden: false
+    light.living_room_downlighter:
+      name: "Living Room Downlighter"
+      hidden: false
 
 # Components
 automation: !include automations.yaml
