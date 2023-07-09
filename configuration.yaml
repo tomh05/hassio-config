@@ -201,6 +201,10 @@ emulated_hue:
       name: "Living Room Downlighter"
       hidden: false
 
+zha:
+  enable_quirks: true
+  custom_quirks_path: /config/custom_zha_quirks
+
 # Components
 automation: !include automations.yaml
 automation old: !include_dir_merge_list configuration/automation
